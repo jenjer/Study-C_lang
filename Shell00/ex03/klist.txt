@@ -1,0 +1,3 @@
+    Name                  Cache name                                 Expires
+* youngski@42SEOUL.KR   API:E2E1B0AF-9DB0-4AF5-A700-87F422EBD2F5   Aug 23 01:50:36 2022
+  youngski@42SEOUL.KR   API:2C824BE7-6A57-43F7-A2AE-34563BF8C53D   Aug 23 00:02:55 2022
