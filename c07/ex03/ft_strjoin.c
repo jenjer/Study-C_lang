@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 char	*ft_strjoin(int size, char **strs, char *sep);
 int		count_length(int size, int all_length, char *seq);
 int		str_size(char *arr);
@@ -36,7 +37,7 @@ int		ct_len(int size, int all_length, char **strs, int sep_size)
 	{
 		while (strs[k])
 		{
-			all_length += (sep_size + str_size(strs))
+			all_length += (sep_size + str_size(strs));
 			k++;
 		}
 		i++;
@@ -44,39 +45,51 @@ int		ct_len(int size, int all_length, char **strs, int sep_size)
 	return (all_length);
 }
 
-char	*ft_strjoin(int size, char **strs, char *sep)
+char	*create_return(int size, char**strs, char*sep, char *ret)
 {
 	int	i;
+	int	j;
 	int	k;
-	int all_length;
-	char *ret;
-	int sep_len;
-
-	if (size == 0)
-	{
-		ret = malloc(1);
-		return (ret);
-	}	
-	sep_len = str_size(sep);
-	i = 0;
-	all_lenght = ct_len(size, all_length, strs, sep_len) + 1
-	ret = malloc(sizeof(char *)*ct_len(size, all_length, strs, sep_len) + 1);
+	
+	i =0;
+	j =0;
+	k = 0;
+	
 	while (i < size)
 	{
-		k = 0;
-		while (strs[i][k])
+		j = 0;
+		while (strs[i][j])
 		{
-			ret[k] 
+			ret[k++] = strs[i][j];
+			j++;
 		}
-
-
+		j = 0;
+		while (sep[j] && i < size -1)
+		{
+			ret[k++] = sep[j++];
+		}
 		i++;
 	}
-
+	ret[k] = '\0';
 	
-
-
-
+}
+char	*ft_strjoin(int size, char **strs, char *sep)
+{
+	char *ret;
+	int i;
+	int full_size;
 	
-
+	if (size == 0)
+	{	
+		ret = malloc(1);
+		ret[0] = NULL;
+	}	
+	else
+	{
+		i = str_size(sep);
+		full_size = ct_len(size, full_size, strs, i);
+		ret = (char *)malloc(sizeof(char)*full_size + 1);
+		create_return(size, strs, sep, ret);
+	}
+	return ret;
 }
