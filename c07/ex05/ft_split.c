@@ -9,7 +9,7 @@
 /*   Updated: 2022/09/07 13:45:29 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <stdio.h>
 #include <stdlib.h>
 char	**ft_split(char *str, char *charset);
 int		count(char *str, char *charset);
@@ -24,17 +24,24 @@ char	*pick_word(char *str, char *charset, int *i)
 	k = *i;
 	while (!check(charset, str[k]))
 	{
+		printf("%d\n",k);
+
 		k++;
 	}
 	ret = malloc(sizeof(char) * (k - *i) + 1);
 	k = *i;
 	while (!check(charset, str[k]))
 	{
-		ret[k] = str[k];
-		k++;
-		*i++;
-	}
 		
+		ret[k] = str[*i];
+		//	printf("ret[%d] = %c\n",k,ret[k]);
+
+		k++;
+		*i = *i + 1;
+		
+	}
+	ret[k] = '\0';		
+	return ret;
 }
 
 int		check(char *str, char c)
@@ -42,7 +49,7 @@ int		check(char *str, char c)
 	int i;
 	
 	i = 0;
-	while (str[i])
+	while (str[i] != '\0')
 	{
 		if (str[i] == c)
 			return 1;
@@ -81,7 +88,7 @@ char	**ft_split(char *str, char *charset)
 	ret = (char **)malloc(sizeof(char*)*count(str, charset) + 1);
 	while (str[i])
 	{
-		while(str[i] != '\0' || check(charset, str[i]))
+		while(str[i] != '\0' && check(charset, str[i]))
 			i++;
 		if (str[i] != '\0' && !check(charset, str[i]))
 		{
@@ -91,6 +98,7 @@ char	**ft_split(char *str, char *charset)
 		
 	}
 	ret[k] = '\0';
+
 	return ret;
 }
 #include <assert.h>
@@ -102,8 +110,13 @@ int main(){
 		/* ex05 */
 	char** ret;
 	ret = ft_split(" abc,d.abcdef^", " ,.^");
+	int i = 0;
+//	while (ret[i])	
+//	printf("%s\n", ret[i++]);
+
 	assert(strcmp(ret[0], "abc") == 0);
 	printf("asdf");
+
 	assert(strcmp(ret[1], "d") == 0);
 	assert(strcmp(ret[2], "abcdef") == 0);
 	assert(ret[3] == NULL);
