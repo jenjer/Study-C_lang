@@ -1,43 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 20:50:09 by youngski          #+#    #+#             */
-/*   Updated: 2022/09/05 14:38:13 by youngski         ###   ########.fr       */
+/*   Created: 2022/09/10 04:20:37 by youngski          #+#    #+#             */
+/*   Updated: 2022/09/10 04:49:48 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_ABS_H
+# define FT_ABS_H
+# define ABS(value) (value  >= 0 ? value : -1 * value)
 
-void	ft_putnbr(int nb);
-void	ft_putchar(char c);
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putchar('2');
-		nb = 147483648;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-		ft_putchar(nb + '0');
-}
+#endif

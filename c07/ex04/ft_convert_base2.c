@@ -1,25 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_interative_factorial.c                          :+:      :+:    :+:   */
+/*   ft_convert_base2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/02 00:49:44 by youngski          #+#    #+#             */
-/*   Updated: 2022/09/02 03:41:22 by youngski         ###   ########.fr       */
+/*   Created: 2022/09/07 13:44:39 by youngski          #+#    #+#             */
+/*   Updated: 2022/09/07 13:44:42 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int ft_interative_factorial(int nb);
 
-int	ft_interative_factorial(int nb)
-{
-	long long int i;
 
-	i = nb;
-	while (i -1 > 0)
-	{
-		nb *= i -1;
-		i--;
-	}
-	return nb;
-}

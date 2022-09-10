@@ -6,15 +6,15 @@
 /*   By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 20:18:15 by youngski          #+#    #+#             */
-/*   Updated: 2022/09/01 20:19:16 by youngski         ###   ########.fr       */
+/*   Updated: 2022/09/05 14:36:04 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str);
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')

@@ -1,43 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 20:50:09 by youngski          #+#    #+#             */
-/*   Updated: 2022/09/05 14:38:13 by youngski         ###   ########.fr       */
+/*   Created: 2022/09/08 11:50:23 by youngski          #+#    #+#             */
+/*   Updated: 2022/09/10 21:03:35 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H 
 
-void	ft_putnbr(int nb);
-void	ft_putchar(char c);
+# include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+typedef int	t_bool;
+void	ft_putchar(char *str);
+t_bool	ft_is_even(int nbr);
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putchar('2');
-		nb = 147483648;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-		ft_putchar(nb + '0');
-}
+# define EVEN(n) n % 2 == 0
+# define FALSE 0
+# define TRUE 1
+# define EVEN_MSG  "I have an even number of arguments.\n"
+# define ODD_MSG  "I have and odd number of arguments.\n"
+# define SUCCESS  TRUE
+
+#endif

@@ -1,43 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_range1.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 20:50:09 by youngski          #+#    #+#             */
-/*   Updated: 2022/09/05 14:38:13 by youngski         ###   ########.fr       */
+/*   Created: 2022/09/10 23:42:00 by youngski          #+#    #+#             */
+/*   Updated: 2022/09/11 00:47:01 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putnbr(int nb);
-void	ft_putchar(char c);
+int	ft_ultimate_range(int **range, int min, int max);
 
-void	ft_putchar(char c)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	write(1, &c, 1);
-}
+	int *arr;
+	int	i;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
+	if (min > max)
 	{
-		ft_putchar('-');
-		ft_putchar('2');
-		nb = 147483648;
+		*range = NULL;
+		return 0;
 	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
+	arr = (int *)malloc(sizeof(int) * (max - min));
+	if (arr == NULL)
+		return -1;
 	else
-		ft_putchar(nb + '0');
+	{
+		i = 0;
+		while (i < max - min)
+		{
+			arr[i] = min + i;
+			i++;
+		}
+		*range = arr;
+	}	
+	return (i);
 }

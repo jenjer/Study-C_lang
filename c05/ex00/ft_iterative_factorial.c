@@ -1,43 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 20:50:09 by youngski          #+#    #+#             */
-/*   Updated: 2022/09/05 14:38:13 by youngski         ###   ########.fr       */
+/*   Created: 2022/09/02 00:49:44 by youngski          #+#    #+#             */
+/*   Updated: 2022/09/09 19:27:00 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+int	ft_iterative_factorial(int nb);
 
-#include <unistd.h>
-
-void	ft_putnbr(int nb);
-void	ft_putchar(char c);
-
-void	ft_putchar(char c)
+int	ft_iterative_factorial(int nb)
 {
-	write(1, &c, 1);
-}
+	int	i;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putchar('2');
-		nb = 147483648;
-	}
 	if (nb < 0)
+		return (0);
+	if (nb == 1 || nb == 0)
+		return (1);
+	i = nb;
+	while (i -1 > 0)
 	{
-		ft_putchar('-');
-		nb = -nb;
+		nb *= i -1;
+		i--;
 	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-		ft_putchar(nb + '0');
+	return (nb);
 }

@@ -6,48 +6,45 @@
 /*   By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 21:51:34 by youngski          #+#    #+#             */
-/*   Updated: 2022/09/01 22:55:05 by youngski         ###   ########.fr       */
+/*   Updated: 2022/09/05 14:43:02 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(char *str);
-unsigned int	*start(char *str, unsigned int *flag);
+int	start(char *str, int *i);
 
-unsigned int	start(char *str, unsigned int *i)
+int	start(char *str, int *i)
 {
-	unsigned int flag;
-	i = 0;
-	flag = 0;
-	while (str[i] != ' ')	
-		i++;
-	while (str[i] != '-' && str[i] != '+')
+	int	flag;
+
+	flag = 1;
+	while (str[*i] == '\t' || str[*i] == '\n' || str[*i] == '\v' || \
+str[*i] == '\f' || str[*i] == '\r' || str[*i] == ' ')
+		*i = *i + 1;
+	while (str[*i] == '-' || str[*i] == '+')
 	{
-		if(str[i] == '-')
-			flag++;
-		i++;
+		if (str[*i] == '-')
+			flag *= -1;
+		*i = *i + 1;
 	}	
-	return flag;
+	return (flag);
 }
 
-int ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-	unsigned int i;
-	int index;
-	int for_return;
-	int count_loop;
+	int	i;
+	int	for_return;
+	int	flag;
 
+	for_return = 0;
 	i = 0;
-	flag[0] = 0;
-	count_loop = 0;
-	flag = start(str, flag);
-	index = flag[2];
-	while (str[index] < '0' || str[index] > '9')
-		index++;
-	while (str[index] > '0' && str[index] < '9')
+	flag = start(str, &i);
+	while (str[i] < '0' || str[i] > '9')
+		return (0);
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		for_return = for_return * 10 + str[index];
-		index++;
-		count_loop++;
+		for_return = for_return * 10 + (str[i] - 48);
+		i++;
 	}
-	return (for_return);
+	return (flag * for_return);
 }

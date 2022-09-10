@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 20:50:09 by youngski          #+#    #+#             */
-/*   Updated: 2022/09/05 14:38:13 by youngski         ###   ########.fr       */
+/*   Created: 2022/09/07 13:39:57 by youngski          #+#    #+#             */
+/*   Updated: 2022/09/10 17:35:34 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putnbr(int nb);
-void	ft_putchar(char c);
+char	*ft_strdup(char *src);
 
-void	ft_putchar(char c)
+char	*ft_strdup(char *src)
 {
-	write(1, &c, 1);
-}
+	int		i;
+	char	*node;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
+	i = 0;
+	while (src[i])
+		i++;
+	node = malloc(sizeof(char) * (i + 1));
+	if (!node)
+		return NULL;
+	i = 0;
+	while (src[i])
 	{
-		ft_putchar('-');
-		ft_putchar('2');
-		nb = 147483648;
+		node[i] = src[i];
+		i++;
 	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-		ft_putchar(nb + '0');
+	node[i] = '\0';
+	return (node);
 }
