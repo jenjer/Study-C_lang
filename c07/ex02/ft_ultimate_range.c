@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range1.c                               :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 23:42:00 by youngski          #+#    #+#             */
-/*   Updated: 2022/09/11 00:47:01 by youngski         ###   ########.fr       */
+/*   Updated: 2022/09/12 06:35:07 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,28 @@ int	ft_ultimate_range(int **range, int min, int max);
 
 int	ft_ultimate_range(int **range, int min, int max)
 {
-	int *arr;
-	int	i;
+	int			i;
+	long long	mx;
+	long long	mn;
 
-	if (min > max)
+	mx = (long long)max;
+	mn = (long long)min;
+	if (min >= max)
 	{
 		*range = NULL;
-		return 0;
+		return (0);
 	}
-	arr = (int *)malloc(sizeof(int) * (max - min));
-	if (arr == NULL)
-		return -1;
+	*range = (int *)malloc(sizeof(int) * (mx - mn));
+	if (range == NULL)
+		return (-1);
 	else
 	{
 		i = 0;
-		while (i < max - min)
+		while (i < mx - mn)
 		{
-			arr[i] = min + i;
+			(*range)[i] = min + i;
 			i++;
 		}
-		*range = arr;
 	}	
 	return (i);
 }

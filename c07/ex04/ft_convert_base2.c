@@ -6,10 +6,9 @@
 /*   By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 13:44:39 by youngski          #+#    #+#             */
-/*   Updated: 2022/09/07 13:44:42 by youngski         ###   ########.fr       */
+/*   Updated: 2022/09/12 04:10:26 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 int	ft_atoi_base(char *str, char *base);
 int	start_base(char *str, int *i);
@@ -38,12 +37,11 @@ int	base_check(char *base, int i, int j)
 {
 	if (!base || !base[0])
 		return (0);
-	while (base[i] == '\t' || base[i] == '\n' || base[i] == '\v' || \
-base[i] == '\f' || base[i] == '\r' || base[i] == ' ')
-		return (0);
 	while (base[i] != '\0')
 	{
-		if (base[i] == '+' || base[i] == '-')
+		if (base[i] == '+' || base[i] == '-' || \
+base[i] == '\t' || base[i] == '\n' || base[i] == '\v' || \
+base[i] == '\f' || base[i] == '\r' || base[i] == ' ')
 			return (0);
 		i++;
 	}

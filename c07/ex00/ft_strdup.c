@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 13:39:57 by youngski          #+#    #+#             */
-/*   Updated: 2022/09/10 17:35:34 by youngski         ###   ########.fr       */
+/*   Updated: 2022/09/11 12:54:58 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strdup(char *src)
 		i++;
 	node = malloc(sizeof(char) * (i + 1));
 	if (!node)
-		return NULL;
+		return (NULL);
 	i = 0;
 	while (src[i])
 	{

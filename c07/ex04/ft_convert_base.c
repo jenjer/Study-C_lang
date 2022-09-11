@@ -6,13 +6,18 @@
 /*   By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 13:43:18 by youngski          #+#    #+#             */
-/*   Updated: 2022/09/07 13:44:22 by youngski         ###   ########.fr       */
+/*   Updated: 2022/09/12 06:32:28 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to);
+int		ft_atoi_base(char *str, char *base);
+int		start_base(char *str, int *i);
+int		putnbr_base(int for_return, char *base);
+int		base_check(char *base, int i, int j);
+int		start_flag(char *str, int *i);
 
 int	ft_strlen_(char *str)
 {
@@ -24,102 +29,67 @@ int	ft_strlen_(char *str)
 	return (i);
 }
 
-int	double_check(char *base)
+void	zero_work(char *base, char *ret)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (base[i + 1] != '\0')
-	{
-		j = i + 1;
-		while (base[j] != '\0' && base[j] != base[i])
-		{
-			j++;
-		}
-		if (base[i] == base[j])
-			return (0);
-		i++;
-	}
-	return (1);
+	free(ret);
+	ret = (char *)malloc(sizeof(char) * 2);
+	ret[0] = base[0];
+	ret[1] = '\0';
 }
 
-void	print_things(long long nbr, char *base)
+void	print_things(long nbr, char *base, char *ret, int ret_len)
 {
-	int	i;
+	long	lnbr;
+	int		index;
+	int		i;
 
+	lnbr = nbr;
 	i = 0;
-	if (nbr < 0)
-		print_things(-nbr, base);
-	while (base[i] != '\0')
-		i++;
-	if (nbr >= i)
+	ret[ret_len] = '\0';
+	ret_len--;
+	index = ret_len;
+	if (nbr == 0)
 	{
-		print_things(nbr / i, base);
-		print_things(nbr % i, base);
-	}
-	else if (nbr > -1)
-	{
-		write (1, &base[nbr], 1);
-	}
-}
-
-void	ft_putnbr_base(int nbr, char *base)
-{
-	int	i;
-
-	i = 0;
-	if (ft_strlen_(base) < 2)
+		zero_work(base, ret);
 		return ;
-	while (base[i] != '\0')
-	{
-		if (base[i] == '+' || base[i] == '-')
-			return ;
-		i++;
 	}
-	if (double_check(base) == 0)
-		return ;
 	if (nbr < 0)
 	{
-		write (1, "-", 1);
+		lnbr = -lnbr;
+		ret[0] = '-';
+	}	
+	while (lnbr > 0)
+	{
+		ret[index] = base[lnbr % ft_strlen_(base)];
+		lnbr = lnbr / ft_strlen_(base);
+		index--;
 	}
-	print_things((long long)nbr, base);
-}
+}	
+
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	char *ret;
-	int	befor_ret;
-	int i;
-	int j;
+	char	*ret;
+	int		before_ret;
+	int		i;
+	int		j;
+	long	before_ret_calc;
+
 	j = 0;
 	i = 0;
-	
-	if (base_check(base_from,i,j) == 0 || base_check(base_to, i ,j))
+	if (!base_check(base_from, i, j) || !base_check(base_to, i, j))
 		return (NULL);
-	befor_ret = ft_atoi_base(nbr, base_from);
-	while (base_to[i])
-		ret[i] = base_to[i++];
-	
-	ft_putnbr_base(befor_ret, ret);
-	return ret;
-}
-#include <assert.h>
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-int main()
-{
-		char* ex04;
-	ex04 = ft_convert_base("  \t---10", "0123456789", "01");
-	assert(strcmp(ex04, "-1010") == 0);
-
-	ex04 = ft_convert_base("  \t---10", "0123456789", "-01");
-	assert(ex04 == NULL);
-	
-	ex04 = ft_convert_base(NULL, "aba", NULL);
-	assert(ex04 == NULL);
-	printf("hello");
-
+	before_ret = ft_atoi_base(nbr, base_from);
+	before_ret_calc = before_ret;
+	if (before_ret_calc < 0)
+		before_ret_calc *= (-1);
+	while (before_ret_calc > 0)
+	{
+		before_ret_calc = before_ret_calc / ft_strlen_(base_to);
+		j++;
+	}
+	if (before_ret < 0)
+		j += 1;
+	ret = (char *)malloc(sizeof(char) *(j + 1));
+	print_things(before_ret, base_to, ret, j);
+	return (ret);
 }

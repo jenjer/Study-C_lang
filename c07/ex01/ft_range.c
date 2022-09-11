@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 13:40:40 by youngski          #+#    #+#             */
-/*   Updated: 2022/09/10 00:18:06 by youngski         ###   ########.fr       */
+/*   Updated: 2022/09/11 22:19:41 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	*ft_range(int min, int max)
 	{
 		ret[k] = min + k;
 		k++;
-		size --;
+		size--;
 	}
 	return (ret);
 }
