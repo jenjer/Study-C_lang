@@ -9,12 +9,13 @@
 /*   Updated: 2022/09/12 03:26:00 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <stdio.h>
 #include <stdlib.h>
 
 char	*ft_strjoin(int size, char **strs, char *sep);
 int		count_length(int size, int all_length, char *seq);
 int		str_size(char *arr);
+char	*ft_strcpy(char *dest, char *src);
 
 int	str_size(char *arr)
 {
@@ -26,22 +27,16 @@ int	str_size(char *arr)
 	return (i);
 }
 
-int	ct_len(int size, int all_length, char **strs, int sep_size)
+int	ct_len(int size, char **strs, int sep_size)
 {
 	int	i;
-	int	k;
-
-	k = 0;
+	int	all_length;
+	
 	i = 0;
 	all_length = -sep_size;
 	while (i < size)
 	{
-		k = 0;
-		while (strs[k])
-		{
-			all_length += (sep_size + str_size(strs[k]));
-			k++;
-		}
+		all_length += (sep_size + str_size(strs[i]));
 		i++;
 	}
 	return (all_length);
@@ -74,24 +69,58 @@ void	create_return(int size, char**strs, char*sep, char *ret)
 	ret[k] = '\0';
 }
 
+char	*ft_strcpy(char *dest, char *src)
+{
+	int	i;
+	
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	return (dest);
+}
+
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*ret;
-	int		i;
 	int		full_size;
 
 	full_size = 0;
 	if (size == 0)
 	{	
 		ret = (char *)malloc(1);
-		ret[0] = '\0';
+		return (ret);
 	}	
-	else
+	full_size = ct_len(size, strs, str_size(sep));
+	ret = malloc(sizeof(char) * full_size + 1);
+	if (ret == NULL)
 	{
-		i = str_size(sep);
-		full_size = ct_len(size, full_size, strs, i);
-		ret = (char *)malloc(sizeof(char) * full_size + 1);
-		create_return(size, strs, sep, ret);
+		return (0);
 	}
+	create_return(size, strs, sep, ret);
 	return (ret);
 }
+int	main(void)
+{
+	int		index;
+	char	**strs;
+	char	*sep;
+	char	*result;
+	int	size;
+
+	size = 3;
+	strs = (char **)malloc(3 * sizeof(char *));
+	strs[0] = (char *)malloc(sizeof(char) * 5 + 1);
+	strs[1] = (char *)malloc(sizeof(char) * 7 + 1);
+	strs[2] = (char *)malloc(sizeof(char) * 14 + 1);
+	strs[0] = "Hello";
+	strs[1] = "";
+	strs[2] = "world";
+	sep = " ";
+	result = ft_strjoin(size, strs, sep);
+	printf("%s$\n", result);
+	free(result);
+}
+	
