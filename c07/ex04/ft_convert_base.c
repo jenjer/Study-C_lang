@@ -16,7 +16,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to);
 int		ft_atoi_base(char *str, char *base);
 int		start_base(char *str, int *i);
 int		putnbr_base(int for_return, char *base);
-int		base_check(char *base, int i, int j);
+int		base_check(char *base);
 int		start_flag(char *str, int *i);
 
 int	ft_strlen_(char *str)
@@ -76,7 +76,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 
 	j = 0;
 	i = 0;
-	if (!base_check(base_from, i, j) || !base_check(base_to, i, j))
+	if (!base_check(base_from) || !base_check(base_to))
 		return (NULL);
 	before_ret = ft_atoi_base(nbr, base_from);
 	before_ret_calc = before_ret;

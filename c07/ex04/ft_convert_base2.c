@@ -13,7 +13,7 @@
 int	ft_atoi_base(char *str, char *base);
 int	start_base(char *str, int *i);
 int	putnbr_base(int for_return, char *base);
-int	base_check(char *base, int i, int j);
+int	base_check(char *base);
 int	start_flag(char *str, int *i);
 
 int	start_flag(char *str, int *i)
@@ -33,29 +33,29 @@ str[*i] == '\f' || str[*i] == '\r' || str[*i] == ' ')
 	return (flag);
 }
 
-int	base_check(char *base, int i, int j)
+int	base_check(char *base)
 {
-	if (!base || !base[0])
+	int	i;
+	int	j;
+	
+	i = 0;
+	if (base[0] == '\0' || base[1] == '\0')
 		return (0);
 	while (base[i] != '\0')
 	{
-		if (base[i] == '+' || base[i] == '-' || \
-base[i] == '\t' || base[i] == '\n' || base[i] == '\v' || \
-base[i] == '\f' || base[i] == '\r' || base[i] == ' ')
-			return (0);
-		i++;
-	}
-	i = 0;
-	while (base[i + 1] != '\0')
-	{
 		j = i + 1;
-		while (base[j] != '\0' && base[j] != base[i])
+		while (base[j] != '\0')
+		{
+			if (base[i] == base[j] || base[j] == '+' || base[j] == '-' ||
+					base[j] == ' ' || base[j] == '\t' || base[j] == '\n' ||
+					base[j] == '\v' || base[j] == '\f' || base[j] == '\r')
+				return (0);
 			j++;
-		if (base[i] == base[j])
-			return (0);
+		}
 		i++;
 	}
 	return (1);
+
 }
 
 int	is_in_base(char str, char *base)
@@ -74,22 +74,20 @@ int	is_in_base(char str, char *base)
 
 int	run_base(char *str, char *base, int i)
 {
-	int	k;
+	int	base_len;
 	int	for_return;
-	int	t;
-	int	j;
-
-	t = 0;
-	j = 0;
+	
 	for_return = 0;
-	k = 0;
-	if (base_check(base, t, j) == 0)
+	base_len = 0;
+	if (base_check(base) == 0)
 		return (0);
-	while (base[k])
-		k++;
+	while (base[base_len])
+		base_len++;
+		
+	
 	while (str[i] && (is_in_base(str[i], base) >= 0))
 	{
-		for_return = for_return * k + is_in_base(str[i], base);
+		for_return = (for_return * base_len) + is_in_base(str[i], base);
 		i++;
 	}
 	return (for_return);
