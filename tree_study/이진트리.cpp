@@ -15,7 +15,6 @@ void add_data(t_node *root, int data);
 void show_node(t_node *root);
 void make_root(t_node *root, int data);
 void remove_data(t_node *root, int data);
-t_node *search_node(t_node *root, int data);
 
 int main()
 {
@@ -26,6 +25,8 @@ int main()
 	
 	loop = 2;
 	root = (t_node *)malloc(sizeof(t_node*));
+	if (!root)
+		return 0; 
 	root->left = NULL;
 	root->right = NULL;
 	root->data = 0;
@@ -65,55 +66,101 @@ int main()
 	}
 }
 
-t_node *search_node(t_node *root, int data)
+t_node *find_rm_up(t_node *root, int data)
 {
-	if (root->data == data)
-		return root;
-	else if (root-> data > data && root->right != NULL)
-		search_node(root->right, data);
-	else if (root->data < data && root->left != NULL)
-		search_node(root->left, data);
+	if (root->data > data)
+	{
+		if (root->left == NULL)
+		{
+			return NULL;
+		}
+		if (root->left->data == data)
+			return root;
+		find_rm_up(root->left, data);
+	}
+	else 
+	{
+		if (root->right == NULL)
+		{
+			return NULL;
+		}
+		if (root->right->data == data)
+			return root;
+		find_rm_up(root->right, data);
+	}
 }
 
-
-//remove_data 이부분은 삭제로 미완성인 부분입니다. 
+//remove_data 이부분은 삭제로 root 삭제 처리가 미완성입니다. 
 void remove_data(t_node *root, int data)
-{	
-	t_node *find_data_node;
-	t_node *change_data;
+{
+	t_node *rm_upper;
+	t_node *rm;
+	t_node *change;
+	t_node *change_before;
 	int flag;
 	
 	flag = 0;
-	find_data_node = search_node(root,data);
-	
-	if (root->data == find_data_node->data)
-		find_data_node =0;
-
-	if(find_data_node->right == NULL)
-		if(find_data_node->left != NULL)
-		change_data = find_data_node->left;
-	else if(find_data_node->left == NULL)
+	if (root->data == data && root->left == NULL && root->right ==NULL)//노드가 1개뿐일 때 
 	{
-		if(find_data_node->right != NULL)
+		root->data = 0;
+		return;
+	}
+	rm_upper = find_rm_up(root,data);
+	if (rm_upper->data < data)
+		rm = rm_upper->right;
+	else
+		rm = rm_upper->left;
+	if (rm->left == NULL && rm->right == NULL) // 삭제하고자 하는 노드가 끝 노드일때 
+	{	
+		if  (rm_upper->data > data)
 		{
-			change_data = find_data_node->right;
+			rm_upper->left = NULL;
+			return ;
+		}
+		else
+		{
+			rm_upper->right = NULL;
+			return ;
+		}
+	}
+	else if (rm->right != NULL)//삭제하고자 하는 노드가 중간에 있을 때 교환 만들어야된다 아직 미완. 
+	{
+		change = rm->right;
+		while (change->left != NULL)
+		{
+			change_before = change;
+			change = change->left;
 			flag = 1;
 		}
-	}
-	if (flag == 0)
-	{
-		while (change_data->right != NULL)
+		if (flag == 0)
 		{
-			change_data = change_data->right;
+			rm_upper->right = rm_upper->right->right;
+			free(rm);
+			return;
 		}
+		rm->data = change->data;
+		change_before->left = NULL;
+		free(change);
 	}
-	else
+	else if (rm->left != NULL)
 	{
-		while (change_data->left != NULL)
-			change_data = change_data->left;
+		change = rm->left;
+		while (change->right != NULL)
+		{
+			change_before = change;
+			change = change->right;
+			flag = 1;
+		}
+		if (flag == 0)
+		{
+			rm_upper->left = rm_upper->left->left;
+			free(rm);
+			return;
+		}
+		rm->data = change->data;
+		change_before->right = NULL;
+		free(change);
 	}
-	find_data_node->data = change_data->data;
-	free(change_data);
 }
 
 
