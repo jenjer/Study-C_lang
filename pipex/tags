@@ -1,0 +1,106 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BUFFER_SIZE	header/libft.h	/^#  define BUFFER_SIZE /;"	d
+LIBFT_H	header/libft.h	/^# define LIBFT_H$/;"	d
+PIPEX_H	header/pipex.h	/^# define PIPEX_H$/;"	d
+check_limit	libft/ft_printf_util.c	/^int	check_limit(void *arg, int flag)$/;"	f
+content	header/libft.h	/^	char			*content;$/;"	m	struct:s_mynode
+count_max	libft/ft_strlcpy.c	/^int	count_max(char *arr)$/;"	f
+count_num_len	libft/ft_itoa.c	/^static int	count_num_len(int n)$/;"	f	file:
+counting_word	libft/ft_split.c	/^static size_t	counting_word(char const *s, char c)$/;"	f	file:
+cp_save_to_ret	libft/get_next_line_utils.c	/^char	*cp_save_to_ret(t_mynode *temp, char *src, ssize_t i)$/;"	f
+cpy	libft/ft_memmove.c	/^static void	cpy(unsigned char *udst, unsigned char *usrc, size_t len)$/;"	f	file:
+cpy_string	libft/ft_split.c	/^static char	*cpy_string(const char *s, char c)$/;"	f	file:
+create_node	libft/get_next_line.c	/^t_mynode	*create_node(int fd)$/;"	f
+data	header/libft.h	/^	int				data;$/;"	m	struct:s_list
+end_writing	main.c	/^void	end_writing(t_data data)$/;"	f
+err_check	libft/ft_printf.c	/^int	err_check(const char *str, va_list ap)$/;"	f
+err_data_setting	main.c	/^int	err_data_setting(t_data *data, int argc, char **argv, char **envp)$/;"	f
+fd	header/libft.h	/^	int				fd;$/;"	m	struct:s_mynode
+final_open	pipex_utils.c	/^int	final_open(char **argv)$/;"	f
+find_node	libft/get_next_line.c	/^t_mynode	*find_node(t_mynode **root, int fd)$/;"	f
+find_path	pipex_utils.c	/^char	*find_path(char *argv[], char **envp, int i)$/;"	f
+first_do	main.c	/^void	first_do(t_data data)$/;"	f
+free_node	libft/get_next_line.c	/^char	*free_node(t_mynode **root, int fd)$/;"	f
+ft_atoi	libft/ft_atoi.c	/^long	ft_atoi(const char *str)$/;"	f
+ft_bzero	libft/ft_bzero.c	/^void	ft_bzero(void *s, size_t n)$/;"	f
+ft_calloc	libft/ft_calloc.c	/^void	*ft_calloc(size_t count, size_t size)$/;"	f
+ft_isalnum	libft/ft_isalnum.c	/^int	ft_isalnum(int c)$/;"	f
+ft_isalpha	libft/ft_isalpha.c	/^int	ft_isalpha(int c)$/;"	f
+ft_isascii	libft/ft_isascii.c	/^int	ft_isascii(int c)$/;"	f
+ft_isdigit	libft/ft_isdigit.c	/^int	ft_isdigit(int c)$/;"	f
+ft_isprint	libft/ft_isprint.c	/^int	ft_isprint(int c)$/;"	f
+ft_itoa	libft/ft_itoa.c	/^char	*ft_itoa(int n)$/;"	f
+ft_lstadd_back	libft/ft_lstadd_back.c	/^void	ft_lstadd_back(t_list **lst, t_list *new)$/;"	f
+ft_lstadd_front	libft/ft_lstadd_front.c	/^void	ft_lstadd_front(t_list **lst, t_list *new)$/;"	f
+ft_lstclear	libft/ft_lstclear.c	/^void	ft_lstclear(t_list **lst)$/;"	f
+ft_lstdelone	libft/ft_lstdelone.c	/^void	ft_lstdelone(t_list *lst)$/;"	f
+ft_lstiter	libft/ft_lstiter.c	/^void	ft_lstiter(t_list *lst)$/;"	f
+ft_lstlast	libft/ft_lstlast.c	/^t_list	*ft_lstlast(t_list *lst)$/;"	f
+ft_lstnew	libft/ft_lstnew.c	/^t_list	*ft_lstnew(int data)$/;"	f
+ft_lstsize	libft/ft_lstsize.c	/^int	ft_lstsize(t_list *lst)$/;"	f
+ft_memchr	libft/ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/;"	f
+ft_memcmp	libft/ft_memcmp.c	/^int	ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f
+ft_memcpy	libft/ft_memcpy.c	/^void	*ft_memcpy(void *dest, const void *src, size_t n)$/;"	f
+ft_memmove	libft/ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, size_t len)$/;"	f
+ft_memset	libft/ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/;"	f
+ft_printf	libft/ft_printf.c	/^int	ft_printf(const char *str, ...)$/;"	f
+ft_putchar_fd	libft/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f
+ft_putendl_fd	libft/ft_putendl_fd.c	/^void	ft_putendl_fd(char *s, int fd)$/;"	f
+ft_putnbr_fd	libft/ft_putnbr_fd.c	/^void	ft_putnbr_fd(int nb, int fd)$/;"	f
+ft_putstr_fd	libft/ft_putstr_fd.c	/^void	ft_putstr_fd(char *s, int fd)$/;"	f
+ft_split	libft/ft_split.c	/^char	**ft_split(char const *s, char c)$/;"	f
+ft_strchr	libft/ft_strchr.c	/^char	*ft_strchr(const char *s, int c)$/;"	f
+ft_strcmp	libft/ft_strcmp.c	/^int	ft_strcmp(char *s1, char *s2)$/;"	f
+ft_strdup	libft/ft_strdup.c	/^char	*ft_strdup(char *s1)$/;"	f
+ft_striteri	libft/ft_striteri.c	/^void	ft_striteri(char *s, void (*f)(unsigned int, char*))$/;"	f
+ft_strjoin	libft/ft_strjoin.c	/^char	*ft_strjoin(char const *s1, char const *s2)$/;"	f
+ft_strlcat	libft/ft_strlcat.c	/^size_t	ft_strlcat(char *dest, const char *src, size_t size)$/;"	f
+ft_strlcpy	libft/ft_strlcpy.c	/^unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)$/;"	f
+ft_strlcpy_1	libft/get_next_line_utils.c	/^void	ft_strlcpy_1(char *dest, char *src, size_t n, int flag)$/;"	f
+ft_strlen	libft/ft_strlen.c	/^size_t	ft_strlen(const char *str)$/;"	f
+ft_strmapi	libft/ft_strmapi.c	/^char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))$/;"	f
+ft_strncmp	libft/ft_strncmp.c	/^int	ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f
+ft_strnstr	libft/ft_strnstr.c	/^char	*ft_strnstr(const char *haystack, const char *needle, size_t len)$/;"	f
+ft_strrchr	libft/ft_strrchr.c	/^char	*ft_strrchr(const char *s, int c)$/;"	f
+ft_strtrim	libft/ft_strtrim.c	/^char	*ft_strtrim(char *s1, char const *set)$/;"	f
+ft_substr	libft/ft_substr.c	/^char	*ft_substr(char *s, unsigned int start, size_t len)$/;"	f
+ft_tolower	libft/ft_tolower.c	/^int	ft_tolower(int c)$/;"	f
+ft_toupper	libft/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f
+get_next_line	libft/get_next_line.c	/^char	*get_next_line(int fd)$/;"	f
+init_fork	pipex_utils.c	/^int	init_fork(t_data *data)$/;"	f
+inserting	libft/ft_split.c	/^static char	**inserting(char **ret, size_t count_word, char const *s, char c)$/;"	f	file:
+keep_stdio	main.c	/^void	keep_stdio(int *origin_fd)$/;"	f
+main	main.c	/^int main(int argc, char *argv[], char **envp)$/;"	f
+make_hex	libft/ft_printf.c	/^char	*make_hex(size_t t_temp, char *hex)$/;"	f
+make_orders_options	pipex_utils.c	/^void	make_orders_options(t_data *data)$/;"	f
+make_return	libft/get_next_line_utils.c	/^char	*make_return(t_mynode *temp, t_mynode **root)$/;"	f
+next	header/libft.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typeref:struct:s_list::s_list
+next	header/libft.h	/^	struct s_mynode	*next;$/;"	m	struct:s_mynode	typeref:struct:s_mynode::s_mynode
+options	header/pipex.h	/^	char ***options;$/;"	m	struct:s_data
+order	header/pipex.h	/^    char **order;$/;"	m	struct:s_data
+pids	header/pipex.h	/^    int *pids;$/;"	m	struct:s_data
+pipes	header/pipex.h	/^    int	**pipes;$/;"	m	struct:s_data
+print_anything	libft/ft_printf_util.c	/^int	print_anything(int arg, char *degree, char *print, int index)$/;"	f
+print_decimal	libft/ft_printf_util.c	/^int	print_decimal(va_list ap)$/;"	f
+print_hex	libft/ft_printf_util.c	/^int	print_hex(va_list ap, int flag)$/;"	f
+print_memo	libft/ft_printf.c	/^int	print_memo(va_list ap)$/;"	f
+print_str	libft/ft_printf.c	/^int	print_str(va_list ap, int flag)$/;"	f
+print_udecimal	libft/ft_printf_util.c	/^int	print_udecimal(va_list ap)$/;"	f
+read_line	libft/get_next_line.c	/^int	read_line(t_mynode *temp, t_mynode **root)$/;"	f
+read_loop	libft/get_next_line_utils.c	/^char	*read_loop(t_mynode **root, t_mynode *temp, char *ret, size_t i)$/;"	f
+s_argc	header/pipex.h	/^    int s_argc;$/;"	m	struct:s_data
+s_argv	header/pipex.h	/^    char **s_argv;$/;"	m	struct:s_data
+s_data	header/pipex.h	/^typedef struct  s_data$/;"	s
+s_envp	header/pipex.h	/^    char **s_envp;$/;"	m	struct:s_data
+s_list	header/libft.h	/^typedef struct s_list$/;"	s
+s_mynode	header/libft.h	/^typedef struct s_mynode$/;"	s
+size	header/libft.h	/^	ssize_t			size;$/;"	m	struct:s_mynode
+start	libft/ft_atoi.c	/^static int	start(const char *str, size_t *i)$/;"	f	file:
+t_data	header/pipex.h	/^}               t_data;$/;"	t	typeref:struct:s_data
+t_list	header/libft.h	/^}					t_list;$/;"	t	typeref:struct:s_list
+t_mynode	header/libft.h	/^}					t_mynode;$/;"	t	typeref:struct:s_mynode
