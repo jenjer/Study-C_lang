@@ -68,12 +68,10 @@ int	print_memo(va_list ap)
 {
 	int		ret;
 	size_t	temp;
-	size_t	len;
 	char	*ans;
 	char	*hex;
 
 	ret = 0;
-	len = 0;
 	hex = "0123456789abcdef";
 	temp = va_arg(ap, size_t);
 	write (1, "0x", 2);
@@ -93,9 +91,6 @@ int	print_memo(va_list ap)
 
 int	err_check(const char *str, va_list ap)
 {
-	char	*dec;
-
-	dec = "0123456789";
 	str++;
 	if (!str)
 		return (-1);
@@ -123,11 +118,9 @@ int	err_check(const char *str, va_list ap)
 int	ft_printf(const char *str, ...)
 {
 	va_list	ap;
-	int		i;
 	int		count;
 	int		char_check;
 
-	i = 0;
 	count = 0;
 	va_start(ap, str);
 	while (*str)

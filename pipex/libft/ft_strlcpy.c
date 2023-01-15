@@ -22,10 +22,8 @@ int	count_max(char *arr)
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	unsigned int	ret;
 	unsigned int	i;
 
-	ret = 0;
 	i = 0;
 	if (size < 1)
 		return (count_max(src));

@@ -101,7 +101,7 @@ void	make_orders_options(t_data *data)
 	while (++i < data->s_argc - 1)
 	{
 		data->order[k++] = find_path(data->s_argv, data->s_envp, i);
-
+	//	ft_printf("data->order[k] = %s\n", data->order[k - 1]);
 	}
 	i = 1;
 	k = 0;

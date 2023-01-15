@@ -45,7 +45,7 @@ int	last_child_work(t_data data, int *pipes, int i)
 	t_data	cp_data;
 	char	*t;
 	
-	i++;
+	i--;
 	cp_data.s_argc = data.s_argc;
 	cp_data.s_argv = data.s_argv;
 	cp_data.s_envp = data.s_envp;
@@ -56,7 +56,6 @@ int	last_child_work(t_data data, int *pipes, int i)
 	fd_write = open(t, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd_write <= 0)
 		return  (0);
-	ft_printf("%d, %s",i, cp_data.order[i]);
 	close(pipes[1]);
 	dup2(fd_write,1);
 	close(pipes[0]);
@@ -72,9 +71,6 @@ void	keep_stdio(int *origin_fd)
 
 int	err_data_setting(t_data *data, int argc, char **argv, char **envp)
 {
-	int	i;
-
-	i = -1;
 	data->s_argc = argc;
 	data->s_argv = argv;
 	data->s_envp = envp;

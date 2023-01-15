@@ -102,9 +102,7 @@ char	*get_next_line(int fd)
 {	
 	static t_mynode	*root;
 	t_mynode		*temp;
-	size_t			i;
 
-	i = 0;
 	if (BUFFER_SIZE <= 0)
 		return (0);
 	temp = find_node(&root, fd);

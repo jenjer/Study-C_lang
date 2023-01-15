@@ -3,11 +3,33 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.8	//
-BUFFER_SIZE	header/libft.h	/^#  define BUFFER_SIZE /;"	d
-LIBFT_H	header/libft.h	/^# define LIBFT_H$/;"	d
-PIPEX_H	header/pipex.h	/^# define PIPEX_H$/;"	d
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AR	Makefile	/^AR = ar$/;"	m
+AR	libft/Makefile	/^AR = ar$/;"	m
+BONUSOBJS	Makefile	/^BONUSOBJS = ${BONUSSRCS:.c=.o}$/;"	m
+BONUSOBJS	libft/Makefile	/^BONUSOBJS = ${BONUSSRCS:.c=.o}$/;"	m
+BONUSSRCS	Makefile	/^BONUSSRCS = .\/bonus\/main.c .\/bonus\/pipex_utils2.c .\/bonus\/pipex_utils.c$/;"	m
+BONUSSRCS	libft/Makefile	/^BONUSSRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c$/;"	m
+BONUS_NAME	Makefile	/^BONUS_NAME = pipex_bonus$/;"	m
+BUFFER_SIZE	header/libft.h	20;"	d
+CFLAGS	Makefile	/^CFLAGS = -Wall -Wextra -Werror$/;"	m
+CFLAGS	libft/Makefile	/^CFLAGS = -Wall -Wextra -Werror$/;"	m
+DEL_A	Makefile	/^DEL_A = pipex.a$/;"	m
+HEADER_D	Makefile	/^HEADER_D=-I.\/header$/;"	m
+LIBFT_H	header/libft.h	14;"	d
+LIB_A	Makefile	/^LIB_A = .\/libft\/libft.a$/;"	m
+NAME	Makefile	/^NAME = pipex$/;"	m
+NAME	libft/Makefile	/^NAME = libft.a$/;"	m
+OBJS	Makefile	/^OBJS = ${SRCS:.c=.o}$/;"	m
+OBJS	libft/Makefile	/^OBJS = ${SRCS:.c=.o}$/;"	m
+PIPEX_BONUS_H	header/pipex_bonus.h	14;"	d
+PIPEX_H	header/pipex.h	14;"	d
+SRCS	Makefile	/^SRCS = main.c pipex_utils.c$/;"	m
+SRCS	libft/Makefile	/^SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_printf.c ft_printf_util.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c  get_next_line.c get_next_line_utils.c ft_strcmp.c ft_strlcpy.c$/;"	m
 check_limit	libft/ft_printf_util.c	/^int	check_limit(void *arg, int flag)$/;"	f
+child_data_setting	bonus/pipex_utils.c	/^int child_data_setting(t_data *data)$/;"	f
+child_data_setting	pipex_utils.c	/^int child_data_setting(t_data *data)$/;"	f
+child_work	bonus/pipex_utils2.c	/^int	child_work(t_data data, int *pipes, int i)$/;"	f
 content	header/libft.h	/^	char			*content;$/;"	m	struct:s_mynode
 count_max	libft/ft_strlcpy.c	/^int	count_max(char *arr)$/;"	f
 count_num_len	libft/ft_itoa.c	/^static int	count_num_len(int n)$/;"	f	file:
@@ -17,14 +39,17 @@ cpy	libft/ft_memmove.c	/^static void	cpy(unsigned char *udst, unsigned char *usr
 cpy_string	libft/ft_split.c	/^static char	*cpy_string(const char *s, char c)$/;"	f	file:
 create_node	libft/get_next_line.c	/^t_mynode	*create_node(int fd)$/;"	f
 data	header/libft.h	/^	int				data;$/;"	m	struct:s_list
-end_writing	main.c	/^void	end_writing(t_data data)$/;"	f
 err_check	libft/ft_printf.c	/^int	err_check(const char *str, va_list ap)$/;"	f
+err_data_setting	bonus/main.c	/^int	err_data_setting(t_data *data, int argc, char **argv, char **envp)$/;"	f
 err_data_setting	main.c	/^int	err_data_setting(t_data *data, int argc, char **argv, char **envp)$/;"	f
 fd	header/libft.h	/^	int				fd;$/;"	m	struct:s_mynode
+final_open	bonus/pipex_utils.c	/^int	final_open(char **argv)$/;"	f
 final_open	pipex_utils.c	/^int	final_open(char **argv)$/;"	f
 find_node	libft/get_next_line.c	/^t_mynode	*find_node(t_mynode **root, int fd)$/;"	f
+find_path	bonus/pipex_utils.c	/^char	*find_path(char *argv[], char **envp, int i)$/;"	f
 find_path	pipex_utils.c	/^char	*find_path(char *argv[], char **envp, int i)$/;"	f
-first_do	main.c	/^void	first_do(t_data data)$/;"	f
+first_child_work	bonus/main.c	/^int	first_child_work(t_data data, int *pipes)$/;"	f
+first_child_work	main.c	/^int	first_child_work(t_data data, int *pipes)$/;"	f
 free_node	libft/get_next_line.c	/^char	*free_node(t_mynode **root, int fd)$/;"	f
 ft_atoi	libft/ft_atoi.c	/^long	ft_atoi(const char *str)$/;"	f
 ft_bzero	libft/ft_bzero.c	/^void	ft_bzero(void *s, size_t n)$/;"	f
@@ -72,19 +97,31 @@ ft_substr	libft/ft_substr.c	/^char	*ft_substr(char *s, unsigned int start, size_
 ft_tolower	libft/ft_tolower.c	/^int	ft_tolower(int c)$/;"	f
 ft_toupper	libft/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f
 get_next_line	libft/get_next_line.c	/^char	*get_next_line(int fd)$/;"	f
-init_fork	pipex_utils.c	/^int	init_fork(t_data *data)$/;"	f
+init_fork	bonus/pipex_utils.c	/^int	init_fork(t_data *data, int i, int k)$/;"	f
+init_fork	pipex_utils.c	/^int	init_fork(t_data *data, int i, int k)$/;"	f
 inserting	libft/ft_split.c	/^static char	**inserting(char **ret, size_t count_word, char const *s, char c)$/;"	f	file:
+keep_stdio	bonus/main.c	/^void	keep_stdio(int *origin_fd)$/;"	f
 keep_stdio	main.c	/^void	keep_stdio(int *origin_fd)$/;"	f
+last_child_work	bonus/main.c	/^int	last_child_work(t_data data, int *pipes, int i)$/;"	f
+last_child_work	main.c	/^int	last_child_work(t_data data, int *pipes)$/;"	f
+main	bonus/main.c	/^int main(int argc, char *argv[], char **envp)$/;"	f
 main	main.c	/^int main(int argc, char *argv[], char **envp)$/;"	f
 make_hex	libft/ft_printf.c	/^char	*make_hex(size_t t_temp, char *hex)$/;"	f
+make_orders_options	bonus/pipex_utils.c	/^void	make_orders_options(t_data *data)$/;"	f
 make_orders_options	pipex_utils.c	/^void	make_orders_options(t_data *data)$/;"	f
 make_return	libft/get_next_line_utils.c	/^char	*make_return(t_mynode *temp, t_mynode **root)$/;"	f
 next	header/libft.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typeref:struct:s_list::s_list
 next	header/libft.h	/^	struct s_mynode	*next;$/;"	m	struct:s_mynode	typeref:struct:s_mynode::s_mynode
 options	header/pipex.h	/^	char ***options;$/;"	m	struct:s_data
+options	header/pipex_bonus.h	/^    char ***options;$/;"	m	struct:s_data
 order	header/pipex.h	/^    char **order;$/;"	m	struct:s_data
-pids	header/pipex.h	/^    int *pids;$/;"	m	struct:s_data
-pipes	header/pipex.h	/^    int	**pipes;$/;"	m	struct:s_data
+order	header/pipex_bonus.h	/^    char **order;$/;"	m	struct:s_data
+pid	header/pipex.h	/^    int pid;$/;"	m	struct:s_data
+pid	header/pipex_bonus.h	/^    int pid;$/;"	m	struct:s_data
+pid_data	header/pipex.h	/^	int	*pid_data;$/;"	m	struct:s_data
+pid_data	header/pipex_bonus.h	/^    int *pid_data;$/;"	m	struct:s_data
+pipe	header/pipex.h	/^    int	*pipe;$/;"	m	struct:s_data
+pipe	header/pipex_bonus.h	/^    int *pipe;$/;"	m	struct:s_data
 print_anything	libft/ft_printf_util.c	/^int	print_anything(int arg, char *degree, char *print, int index)$/;"	f
 print_decimal	libft/ft_printf_util.c	/^int	print_decimal(va_list ap)$/;"	f
 print_hex	libft/ft_printf_util.c	/^int	print_hex(va_list ap, int flag)$/;"	f
@@ -94,13 +131,18 @@ print_udecimal	libft/ft_printf_util.c	/^int	print_udecimal(va_list ap)$/;"	f
 read_line	libft/get_next_line.c	/^int	read_line(t_mynode *temp, t_mynode **root)$/;"	f
 read_loop	libft/get_next_line_utils.c	/^char	*read_loop(t_mynode **root, t_mynode *temp, char *ret, size_t i)$/;"	f
 s_argc	header/pipex.h	/^    int s_argc;$/;"	m	struct:s_data
+s_argc	header/pipex_bonus.h	/^    int s_argc;$/;"	m	struct:s_data
 s_argv	header/pipex.h	/^    char **s_argv;$/;"	m	struct:s_data
+s_argv	header/pipex_bonus.h	/^    char **s_argv;$/;"	m	struct:s_data
 s_data	header/pipex.h	/^typedef struct  s_data$/;"	s
+s_data	header/pipex_bonus.h	/^typedef struct  s_data$/;"	s
 s_envp	header/pipex.h	/^    char **s_envp;$/;"	m	struct:s_data
+s_envp	header/pipex_bonus.h	/^    char **s_envp;$/;"	m	struct:s_data
 s_list	header/libft.h	/^typedef struct s_list$/;"	s
 s_mynode	header/libft.h	/^typedef struct s_mynode$/;"	s
 size	header/libft.h	/^	ssize_t			size;$/;"	m	struct:s_mynode
 start	libft/ft_atoi.c	/^static int	start(const char *str, size_t *i)$/;"	f	file:
 t_data	header/pipex.h	/^}               t_data;$/;"	t	typeref:struct:s_data
+t_data	header/pipex_bonus.h	/^}               t_data;$/;"	t	typeref:struct:s_data
 t_list	header/libft.h	/^}					t_list;$/;"	t	typeref:struct:s_list
 t_mynode	header/libft.h	/^}					t_mynode;$/;"	t	typeref:struct:s_mynode

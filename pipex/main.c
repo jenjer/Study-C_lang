@@ -70,9 +70,6 @@ void	keep_stdio(int *origin_fd)
 
 int	err_data_setting(t_data *data, int argc, char **argv, char **envp)
 {
-	int	i;
-
-	i = -1;
 	data->s_argc = argc;
 	data->s_argv = argv;
 	data->s_envp = envp;

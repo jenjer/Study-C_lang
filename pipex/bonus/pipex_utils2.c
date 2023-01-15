@@ -27,6 +27,6 @@ int	child_work(t_data data, int *pipes, int i)
     dup2(pipes[1],1);
     close(pipes[1]);
     close(pipes[0]);
-    execve(cp_data.order[i], cp_data.options[i], data.s_envp);
+    execve(cp_data.order[i-1], cp_data.options[i-1], data.s_envp);
     return (1);
 }
