@@ -18,6 +18,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <sys/wait.h>
+# include <sys/types.h>
 
 typedef struct  s_data
 {
@@ -42,6 +43,8 @@ int		first_child_work(t_data data, int *pipe);
 int		last_child_work(t_data data, int *pipe);
 int		child_data_setting(t_data *data);
 int		child_work(t_data data, int *pipes, int i);
+int		msg(char *err);
+int		msg_error(char *err);
 
 
 

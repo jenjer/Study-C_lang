@@ -70,10 +70,10 @@ int	init_fork(t_data *data, int i, int k)
 
 	pipe(pipes);
 	if (pipes[0] == -1 || pipes[1] == -1)
-		return (0);
+		return (msg_error("pipe_error\n"));
 	data->pid = fork();
 	if (data->pid == -1)
-		return (0);
+		return (msg_error("pid_error\n"));
 	else if (data->pid == 0)
 	{
 		if (i == 2)

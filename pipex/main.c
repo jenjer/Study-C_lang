@@ -21,14 +21,14 @@ int	first_child_work(t_data data, int *pipes)
 	fd = open(data.s_argv[1], O_RDONLY);
 	if (fd <= 0)
 	{
-		ft_printf("fail to file open");
+		msg_error("fail to file open");
 		close(fd);
 	}
 	cp_data.s_argc = data.s_argc;
 	cp_data.s_argv = data.s_argv;
 	cp_data.s_envp = data.s_envp;
 	if (child_data_setting(&cp_data))
-		return (0);
+		return (msg_error("fail_to_malloc"));
 	make_orders_options(&cp_data);
 	dup2(fd, 0);
 	close(fd);
@@ -49,12 +49,14 @@ int	last_child_work(t_data data, int *pipes)
 	cp_data.s_argv = data.s_argv;
 	cp_data.s_envp = data.s_envp;
 	if (child_data_setting(&cp_data))
-		return (0);
+		return (msg("fail_to_malloc"));
 	make_orders_options(&cp_data);
 	t = data.s_argv[data.s_argc - 1];
 	fd_write = open(t, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd_write <= 0)
-		return  (0);
+	{
+		return (msg("outfile_error\n"));
+	}
 	close(pipes[1]);
 	dup2(fd_write,1);
 	close(pipes[0]);
@@ -88,8 +90,7 @@ int main(int argc, char *argv[], char **envp)
 	j = 2;
 	if (argc != 5)
 	{
-		ft_printf("check argument number\n");
-		return (0);
+		return (msg("input_err\n"));
 	}
 	if (!err_data_setting(&data, argc, argv, envp))
 		return (0);

@@ -10,8 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.c pipex_utils.c
-BONUSSRCS = ./bonus/main.c ./bonus/pipex_utils2.c ./bonus/pipex_utils.c
+SRCS = main.c pipex_utils.c error.c
+BONUSSRCS = ./bonus/main.c ./bonus/pipex_utils2.c ./bonus/pipex_utils.c error.c
 
 OBJS = ${SRCS:.c=.o}
 BONUSOBJS = ${BONUSSRCS:.c=.o}
