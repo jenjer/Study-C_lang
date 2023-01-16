@@ -1,0 +1,16 @@
+Makefile
+bonus
+error.c
+error.o
+header
+infile
+libft
+main.c
+main.o
+outfile
+outifle
+pipex
+pipex.a
+pipex_bonus
+pipex_utils.c
+pipex_utils.o

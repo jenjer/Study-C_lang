@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 12:24:30 by youngski          #+#    #+#             */
-/*   Updated: 2023/01/12 18:52:43 by youngski         ###   ########.fr       */
+/*   Updated: 2023/01/16 11:24:41 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,20 @@ int	final_open(char **argv)
 {
 	int	fd;
 
-    fd = open(argv[4], O_WRONLY);
-    if (fd < 0)
-        ft_printf("fail to file open");
-    return (fd);	
+	fd = open(argv[4], O_WRONLY);
+	if (fd < 0)
+		ft_printf("fail to file open");
+	return (fd);
 }
 
-int child_data_setting(t_data *data)
+int	child_data_setting(t_data *data)
 {
-    data->options = (char ***)malloc(sizeof(char **) * (data->s_argc - 3));
-    if (data->options == 0)
-      return (1);
-    data->order = (char **)malloc(sizeof(char *) * (data->s_argc -3));
-    if (data ->order == 0)
-      return (1);
+	data->options = (char ***)malloc(sizeof(char **) * (data->s_argc - 3));
+	if (data->options == 0)
+		return (1);
+	data->order = (char **)malloc(sizeof(char *) * (data->s_argc -3));
+	if (data ->order == 0)
+		return (1);
 	return (0);
 }
 
@@ -54,8 +54,8 @@ char	*find_path(char *argv[], char **envp, int i)
 	{
 		temp = ft_split(argv[i], ' ');
 		sp_path = ft_strjoin(str[k], temp[0]);
-		if (access(sp_path, X_OK) == 0 )
-			break;
+		if (access(sp_path, X_OK) == 0)
+			break ;
 	}
 	if (access(sp_path, X_OK) == 0)
 		return (sp_path);
@@ -65,7 +65,7 @@ char	*find_path(char *argv[], char **envp, int i)
 
 int	init_fork(t_data *data, int i, int k)
 {
-	int pipes[2];
+	int	pipes[2];
 
 	pipe(pipes);
 	if (pipes[0] == -1 || pipes[1] == -1)
@@ -79,7 +79,7 @@ int	init_fork(t_data *data, int i, int k)
 			first_child_work(*data, pipes);
 		else if (i == data->s_argc - 2)
 			last_child_work(*data, pipes, k);
-		else  
+		else
 			child_work(*data, pipes, i);
 	}
 	else if (data->pid != 0)
@@ -101,7 +101,6 @@ void	make_orders_options(t_data *data)
 	while (++i < data->s_argc - 1)
 	{
 		data->order[k++] = find_path(data->s_argv, data->s_envp, i);
-	//	ft_printf("data->order[k] = %s\n", data->order[k - 1]);
 	}
 	i = 1;
 	k = 0;

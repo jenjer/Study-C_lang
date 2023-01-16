@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 13:19:07 by youngski          #+#    #+#             */
-/*   Updated: 2023/01/12 17:50:27 by youngski         ###   ########.fr       */
+/*   Updated: 2023/01/16 11:43:01 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 
 int	first_child_work(t_data data, int *pipes)
 {
-	int fd;
-	t_data cp_data;
+	int		fd;
+	t_data	cp_data;
 
-	fd = open(data.s_argv[1], O_RDONLY);
-	if (fd <= 0)
-	{
-		ft_printf("fail to file open");
-		close(fd);
-	}
 	cp_data.s_argc = data.s_argc;
 	cp_data.s_argv = data.s_argv;
 	cp_data.s_envp = data.s_envp;
 	if (child_data_setting(&cp_data))
 		return (0);
 	make_orders_options(&cp_data);
+	fd = open(data.s_argv[1], O_RDONLY);
+	if (fd <= 0)
+	{
+		msg_error("fail to file open");
+		exit(0);
+	}
 	dup2(fd, 0);
 	close(fd);
 	dup2(pipes[1], 1);
@@ -44,7 +44,7 @@ int	last_child_work(t_data data, int *pipes, int i)
 	int		fd_write;
 	t_data	cp_data;
 	char	*t;
-	
+
 	i--;
 	cp_data.s_argc = data.s_argc;
 	cp_data.s_argv = data.s_argv;
@@ -55,9 +55,9 @@ int	last_child_work(t_data data, int *pipes, int i)
 	t = data.s_argv[data.s_argc - 1];
 	fd_write = open(t, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd_write <= 0)
-		return  (0);
+		return (0);
 	close(pipes[1]);
-	dup2(fd_write,1);
+	dup2(fd_write, 1);
 	close(pipes[0]);
 	execve(cp_data.order[i], cp_data.options[i], data.s_envp);
 	return (1);
@@ -80,11 +80,11 @@ int	err_data_setting(t_data *data, int argc, char **argv, char **envp)
 	return (1);
 }
 
-int main(int argc, char *argv[], char **envp)
+int	main(int argc, char *argv[], char **envp)
 {
-	int k;
-	int	j;
-	t_data data;
+	int		k;
+	int		j;
+	t_data	data;
 
 	j = 2;
 	if (argc < 4)
@@ -92,7 +92,6 @@ int main(int argc, char *argv[], char **envp)
 		ft_printf("check argument number\n");
 		return (0);
 	}
-
 	if (!err_data_setting(&data, argc, argv, envp))
 		return (0);
 	k = 0;
@@ -103,7 +102,7 @@ int main(int argc, char *argv[], char **envp)
 	}
 	waitpid(data.pid, NULL, 0);
 	k = 2;
-	while (++k < argc-1)
+	while (++k < argc - 1)
 		wait(0);
 	free(data.pid_data);
 	return (0);
