@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youngski <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 10:09:39 by youngski          #+#    #+#             */
-/*   Updated: 2022/11/10 21:33:26 by youngski         ###   ########.fr       */
+/*   Created: 2023/01/27 21:01:10 by youngski          #+#    #+#             */
+/*   Updated: 2023/01/27 21:15:53 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+
+int	main(int argc, char *argv[])
 {
-	unsigned char	*bb;
-	size_t			i;
-
-	i = 0;
-	c = (unsigned char)c;
-	bb = (unsigned char *)b;
-	while (i < len)
-	{
-		bb[i] = c;
-		i++;
-	}
-	return ((void *)bb);
+	if (argc != 6)
+		return (0);
+	
+	if (!philo_work())
+		return (1);
+	return (0);
 }
