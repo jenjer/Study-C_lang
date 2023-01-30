@@ -6,16 +6,16 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 20:21:21 by youngski          #+#    #+#             */
-/*   Updated: 2022/12/27 13:06:45 by youngski         ###   ########.fr       */
+/*   Updated: 2022/12/27 22:30:01 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-void sort_num_3(t_list **root1, int large)
+void	sort_num_3(t_list **root1, int large)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = *root1;
 	while (temp)
@@ -36,16 +36,16 @@ void sort_num_3(t_list **root1, int large)
 		if ((*root1)->data > (*root1)->next->data)
 			sa(*root1, 1);
 	}
-	else 
+	else
 		if ((*root1)->data > (*root1)->next->data)
 			sa(*root1, 1);
 }
 
-int find_small(t_list *root1, int size)
+int	find_small(t_list *root1, int size)
 {
-	int	small;
-	int	count;
-	t_list *temp;
+	int		small;
+	int		count;
+	t_list	*temp;
 
 	small = 2147483647;
 	count = 0;
@@ -60,20 +60,21 @@ int find_small(t_list *root1, int size)
 	while (temp)
 	{
 		if (temp->data == small)
-			break;
+			break ;
 		count++;
 		temp = temp->next;
 	}
-	if (count < size/2)
-		return count;		
-	else 
-		return -(size-count);
+	if (count < size / 2)
+		return (count);
+	else
+		return (- (size - count));
 }
 
-void sort_num_4(t_list **root1, t_list **root2, int size)
+void	sort_num_4(t_list **root1, t_list **root2, int size)
 {
-	int	count;
-	t_list *temp;
+	int		count;
+	t_list	*temp;
+
 	temp = *root1;
 	count = find_small(*root1, size);
 	while (count != 0)
@@ -82,10 +83,10 @@ void sort_num_4(t_list **root1, t_list **root2, int size)
 		{
 			rra(root1, 1);
 			count ++;
-			continue;
+			continue ;
 		}
 		if (count == 0)
-			break;
+			break ;
 		ra(root1, 1);
 		count--;
 	}
@@ -94,39 +95,37 @@ void sort_num_4(t_list **root1, t_list **root2, int size)
 	pa(root1, root2);
 }
 
-
-void sort_num_5(t_list **root1, t_list **root2, int size)
+void	sort_num_5(t_list **root1, t_list **root2, int size)
 {
-	int	count;
-	t_list *temp;
-	
+	int		count;
+	t_list	*temp;
+
 	temp = *root1;
 	count = find_small(*root1, size);
 	while (count != 0)
 	{
 		if (count < 0)
 		{
-			while(count)
+			while (count)
 			{
 				rra(root1, 1);
 				count ++;
 			}
-			break;
+			break ;
 		}
 		if (count == 0)
-			break;
+			break ;
 		ra(root1, 1);
 		count--;
 	}
-	pb(root1, root2);	
+	pb(root1, root2);
 	sort_num_4(root1, root2, size - 1);
 	pa(root1, root2);
 	temp = *root1;
 }
 
-void hard_coding(t_list **root1, t_list **root2, int size)
+void	hard_coding(t_list **root1, t_list **root2, int size)
 {
-
 	if (size == 2)
 	{
 		if ((*root1)->data > (*root1)->next->data)
@@ -136,9 +135,8 @@ void hard_coding(t_list **root1, t_list **root2, int size)
 		sort_num_3(root1, -2147483648);
 	else if (size == 4)
 		sort_num_4(root1, root2, size);
-	else if (size ==5 )
+	else if (size == 5)
 		sort_num_5(root1, root2, size);
 	else
 		sort_all(root1, root2, size);
-	//b 를 a 로 정렬할것
 }

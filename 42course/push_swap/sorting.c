@@ -6,36 +6,12 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 17:17:38 by youngski          #+#    #+#             */
-/*   Updated: 2022/12/24 21:06:42 by youngski         ###   ########.fr       */
+/*   Updated: 2022/12/30 02:01:00 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
-
-int	*node_to_arr(t_list *root)
-{
-	t_list	*temp;
-	int		*ret;
-	int		i;
-	int		count;
-
-	i = 0;
-	count = 0;
-	temp = root;
-	while (temp->next)
-	{
-		temp = temp->next;
-		count++;
-	}
-	ret = (int *)malloc(sizeof(int) * count);
-	while (root)
-	{
-		ret[i] = root->data;
-		root = root->next;
-	}
-	return (ret);
-}
 
 int	*bubble_sort(int *arr, int size)
 {
@@ -109,4 +85,10 @@ void	make_list_index(t_list *root, int *sorted, int size)
 		root = root->next;
 	}
 	root = temp;
+}
+
+void	sort_all(t_list **root1, t_list **root2, int size)
+{
+	move_b(root1, root2, size, 0);
+	move_a(root1, root2, size);
 }

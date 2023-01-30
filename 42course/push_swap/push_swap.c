@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:56:16 by youngski          #+#    #+#             */
-/*   Updated: 2022/12/24 21:11:10 by youngski         ###   ########.fr       */
+/*   Updated: 2022/12/30 17:03:13 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,34 +39,6 @@ int	max(char *str)
 	return (0);
 }
 
-int	error_check(int argc, char *argv[])
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	if (argc < 2)
-		return (0);
-	while (argv[++i])
-	{
-		j = -1;
-		if (max(argv[i]))
-			return (0);
-		if (argv[i][0] == 0)
-			return (0);
-		while (argv[i][++j])
-		{
-			if (j == 0 && argv[i][j] == '-' && argv[i][j + 1])
-				j++;
-			if (!ft_isdigit(argv[i][j]))
-				return (0);
-		}
-	}
-	if (i < argc)
-		return (0);
-	return (1);
-}
-
 int	overlaped(t_list *root)
 {
 	t_list	*rt_next;
@@ -89,19 +61,19 @@ int	push_swap(int argc, char *argv[])
 {
 	t_list	*root1;
 	int		i;
+	int		flag;
 
+	flag = 0;
 	root1 = 0;
 	i = 1;
-	while (i < argc)
+	argc = argument_setting(argc, argv, &root1, 0);
+	if ((root1 == NULL) || overlaped(root1) || argc == 0)
 	{
-		ft_lstadd_back(&root1, ft_lstnew(atoi(argv[i])));
-		i++;
-	}
-	if ((! error_check(argc, argv)) || overlaped(root1))
-	{
-		ft_printf("Error");
+		ft_lstclear(&root1);
+		ft_printf("Error\n");
 		return (0);
 	}
-	do_run(root1, argc);
+	do_run(&root1, argc + 1, 0);
+	ft_lstclear(&root1);
 	return (0);
 }

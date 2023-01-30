@@ -6,13 +6,11 @@
 /*   By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 21:13:20 by youngski          #+#    #+#             */
-/*   Updated: 2022/11/24 18:41:52 by youngski         ###   ########.fr       */
+/*   Updated: 2022/12/28 17:27:56 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-static int	count_max(const char *arr)
+int	count_max(char *arr)
 {
 	int	i;
 
@@ -22,16 +20,16 @@ static int	count_max(const char *arr)
 	return (i);
 }
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	size_t	ret;
-	size_t	i;
+	unsigned int	ret;
+	unsigned int	i;
 
 	ret = 0;
 	i = 0;
-	if (dstsize < 1)
+	if (size < 1)
 		return (count_max(src));
-	while (i < dstsize -1 && src[i])
+	while (i < size -1 && src[i])
 	{
 		dest[i] = src[i];
 		i++;

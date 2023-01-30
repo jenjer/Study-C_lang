@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 22:45:18 by youngski          #+#    #+#             */
-/*   Updated: 2022/12/27 12:54:02 by youngski         ###   ########.fr       */
+/*   Updated: 2022/12/30 04:04:32 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,19 @@ int	check_five(t_list *root1)
 		i++;
 		temp = temp->next;
 	}
-	return i;
+	return (i);
 }
 
-void sorting_all_list(t_list **root1, t_list **root2, int size)
+void	sorting_all_list(t_list **root1, t_list **root2, int size)
 {
 	hard_coding(root1, root2, size);
 }
 
-int make_ans(t_list **root1, int size)
+int	make_ans(t_list **root1, int size)
 {
-	t_list *root2;
-	(void) size;
+	t_list	*root2;
 
 	root2 = 0;
-	t_list *temp;
-	temp = *root1;
 	hard_coding(root1, &root2, size);
-	return 0;
+	return (0);
 }

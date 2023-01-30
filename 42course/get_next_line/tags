@@ -1,0 +1,41 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BUFFER_SIZE	get_next_line.h	/^#  define BUFFER_SIZE /;"	d
+BUFFER_SIZE	get_next_line_bonus.h	/^#  define BUFFER_SIZE /;"	d
+GET_NEXT_LINE_BONUS_H	get_next_line_bonus.h	/^# define GET_NEXT_LINE_BONUS_H$/;"	d
+GET_NEXT_LINE_H	get_next_line.h	/^# define GET_NEXT_LINE_H$/;"	d
+content	get_next_line.h	/^	char				*content;$/;"	m	struct:s_mynode
+content	get_next_line_bonus.h	/^	char				*content;$/;"	m	struct:s_mynode
+cp_save_to_ret	get_next_line_utils.c	/^char	*cp_save_to_ret(t_mynode *temp, char *src, ssize_t i)$/;"	f
+cp_save_to_ret	get_next_line_utils_bonus.c	/^char	*cp_save_to_ret(t_mynode *temp, char *src, ssize_t i)$/;"	f
+create_node	get_next_line.c	/^t_mynode	*create_node(int fd)$/;"	f
+create_node	get_next_line_bonus.c	/^t_mynode	*create_node(int fd)$/;"	f
+fd	get_next_line.h	/^	int					fd;$/;"	m	struct:s_mynode
+fd	get_next_line_bonus.h	/^	int					fd;$/;"	m	struct:s_mynode
+find_node	get_next_line.c	/^t_mynode	*find_node(t_mynode **root, int fd)$/;"	f
+find_node	get_next_line_bonus.c	/^t_mynode	*find_node(t_mynode **root, int fd)$/;"	f
+free_node	get_next_line.c	/^char	*free_node(t_mynode **root, int fd)$/;"	f
+free_node	get_next_line_bonus.c	/^char	*free_node(t_mynode **root, int fd)$/;"	f
+ft_strlcpy	get_next_line_utils.c	/^void	ft_strlcpy(char *dest, char *src, size_t n, int flag)$/;"	f
+ft_strlcpy	get_next_line_utils_bonus.c	/^void	ft_strlcpy(char *dest, char *src, size_t n, int flag)$/;"	f
+get_next_line	get_next_line.c	/^char	*get_next_line(int fd)$/;"	f
+get_next_line	get_next_line_bonus.c	/^char	*get_next_line(int fd)$/;"	f
+main	main.c	/^int main()$/;"	f
+make_return	get_next_line_utils.c	/^char	*make_return(t_mynode *temp, t_mynode **root)$/;"	f
+make_return	get_next_line_utils_bonus.c	/^char	*make_return(t_mynode *temp, t_mynode **root)$/;"	f
+next	get_next_line.h	/^	struct s_mynode		*next;$/;"	m	struct:s_mynode	typeref:struct:s_mynode::s_mynode
+next	get_next_line_bonus.h	/^	struct s_mynode		*next;$/;"	m	struct:s_mynode	typeref:struct:s_mynode::s_mynode
+read_line	get_next_line.c	/^int	read_line(t_mynode *temp, t_mynode **root)$/;"	f
+read_line	get_next_line_bonus.c	/^int	read_line(t_mynode *temp, t_mynode **root)$/;"	f
+read_loop	get_next_line_utils.c	/^char	*read_loop(t_mynode **root, t_mynode *temp, char *ret, size_t i)$/;"	f
+read_loop	get_next_line_utils_bonus.c	/^char	*read_loop(t_mynode **root, t_mynode *temp, char *ret, size_t i)$/;"	f
+s_mynode	get_next_line.h	/^typedef struct s_mynode$/;"	s
+s_mynode	get_next_line_bonus.h	/^typedef struct s_mynode$/;"	s
+size	get_next_line.h	/^	ssize_t				size;$/;"	m	struct:s_mynode
+size	get_next_line_bonus.h	/^	ssize_t				size;$/;"	m	struct:s_mynode
+t_mynode	get_next_line.h	/^}						t_mynode;$/;"	t	typeref:struct:s_mynode
+t_mynode	get_next_line_bonus.h	/^}						t_mynode;$/;"	t	typeref:struct:s_mynode
