@@ -1,0 +1,2 @@
+gcc *.c -lreadline ./libft/*.c -I./libft -L/Users/youngski/.brew/opt/readline/lib -I/Users/youngski/.brew/opt/readline/include ./srcs/*.c ./pipes/*.c -g3
+brew info readline
