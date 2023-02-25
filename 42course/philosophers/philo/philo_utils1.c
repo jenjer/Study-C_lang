@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:36:04 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/25 12:08:34 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/25 17:12:31 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,5 @@ unsigned long	ft_get_time(void)
 
 	gettimeofday(&mytime, 0);
 	return ((mytime.tv_sec * (unsigned long)1000)\
-			+ (mytime.tv_usec / 100));
+			+ (mytime.tv_usec / 1000));
 }
