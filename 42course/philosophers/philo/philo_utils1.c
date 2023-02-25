@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:36:04 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/24 16:05:14 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/25 12:08:34 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int	ft_arg_init_mutex(t_arg *arg)
 	{
 		if (pthread_mutex_init(&(arg->forks[i]), 0))
 			return (1);
+		i++;
 	}
 	return (0);
 }
@@ -64,7 +65,11 @@ void	ft_free_thread(t_arg *arg, t_philo *philo)
 	free(philo);
 }
 
-long long	ft_get_time()
+unsigned long	ft_get_time(void)
 {
-	return 10;
+	struct timeval	mytime;
+
+	gettimeofday(&mytime, 0);
+	return ((mytime.tv_sec * (unsigned long)1000)\
+			+ (mytime.tv_usec / 100));
 }

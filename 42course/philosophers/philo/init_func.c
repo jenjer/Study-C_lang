@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arg_setting.c                                      :+:      :+:    :+:   */
+/*   init_func.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 21:41:32 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/24 16:09:37 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/25 12:25:03 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,22 +52,19 @@ int	ft_arg_init(t_arg *arg, int argc, char *argv[])
 int	ft_philo_init(t_philo **philo, t_arg *arg)
 {
 	int	i;
-	t_philo *temp;
 
-	temp = *philo;
 	i = 0;
 	*philo = malloc(sizeof(t_philo) * arg->philo_num);
-	if (!(philo))
+	if (!(*philo))
 		return (1);
 	while(i < arg->philo_num)
 	{
-		temp->arg = arg;
-		temp->id = i;
-		temp->left = i;
-		temp->right = (i + 1) % arg->philo_num;
-		temp->last_eat_time = ft_get_time();
-		temp->eat_count = 0;
-		temp++;
+		(*philo)[i].arg = arg;
+		(*philo)[i].id = i;
+		(*philo)[i].left = i;
+		(*philo)[i].right = (i + 1) % arg->philo_num;
+		(*philo)[i].last_eat_time = ft_get_time();
+		(*philo)[i].eat_count = 0;
 		i++;
 	}
 	return (0);
