@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 22:36:36 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/25 21:21:45 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/25 22:00:40 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ int	ft_philo_printf(t_arg *arg, int id, char *msg)
 		return (-1);
 	}
 	pthread_mutex_lock(&(arg->print));
+	pthread_mutex_lock(&(arg->finish_mu));
 	if (!(arg->finish))
 		printf("%lld %d %s \n", now - arg->start_time, id + 1, msg);
+	pthread_mutex_unlock(&(arg->finish_mu));
 	pthread_mutex_unlock(&(arg->print));
 	return (0);
 }

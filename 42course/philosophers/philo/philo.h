@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 18:23:33 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/25 21:47:19 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/25 21:53:17 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int				print_error(char *msg, int num);
 int				time_check(t_arg *arg);
 
 int				ft_atoi(const char *str);
+int 			arg_fin_check(t_arg *arg);
 
 
 #endif

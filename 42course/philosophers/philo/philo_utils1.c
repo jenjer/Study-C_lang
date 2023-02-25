@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:36:04 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/25 21:49:36 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/25 21:58:13 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	ft_philo_check_finish(t_arg *arg, t_philo *philo)
 
 	int for_print = 0;
 	//while 문 조건의 finish_mu락 부분을 함수로 뽑아서 리턴값으로 와일문을 돌려줘야된다. 아니면 한번만 락걸려서 나중에 걸리는 수가 있다.
-	pthread_mutex_lock(&(arg->finish_mu));
-	while (!arg->finish)
+//	pthread_mutex_lock(&(arg->finish_mu));
+	while (/*!arg->finish*/arg_fin_check(arg))
 	{
-		pthread_mutex_unlock(&(arg->finish_mu));
+	//	pthread_mutex_unlock(&(arg->finish_mu));
 		pthread_mutex_lock(&(arg->finished_eat_mu));
 		if (((arg->eat_times != 0) && (arg->philo_num == arg->finished_eat)) || time_check(arg) == 1)
 		{
@@ -34,6 +34,7 @@ void	ft_philo_check_finish(t_arg *arg, t_philo *philo)
 				for_print ++;
 			}
 			pthread_mutex_lock(&(arg->finish_mu));
+			//여기서 발생한다.
 			arg->finish = 1;
 			pthread_mutex_unlock(&(arg->finish_mu));
 			break ;
