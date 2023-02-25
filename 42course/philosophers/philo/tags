@@ -6,7 +6,7 @@
 !_TAG_PROGRAM_VERSION	5.8	//
 AR	Makefile	/^AR = ar$/;"	m
 BONUSOBJS	Makefile	/^BONUSOBJS = ${BONUSSRCS:.c=.o}$/;"	m
-CFLAGS	Makefile	/^CFLAGS = -Wall -Wextra -Werror -pthread -g3$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -Wall -Wextra -Werror -pthread -g3 $/;"	m
 NAME	Makefile	/^NAME = philo$/;"	m
 OBJS	Makefile	/^OBJS = ${SRCS:.c=.o}$/;"	m
 PHILO_H	philo.h	/^# define PHILO_H$/;"	d
@@ -41,11 +41,12 @@ right	philo.h	/^	int				right;$/;"	m	struct:s_philo
 s_arg	philo.h	/^typedef struct s_arg$/;"	s
 s_philo	philo.h	/^typedef struct	s_philo$/;"	s
 start	ft_atoi.c	/^static int	start(const char *str, size_t *i)$/;"	f	file:
-start_time	philo.h	/^	long long		start_time;$/;"	m	struct:s_arg
+start_time	philo.h	/^	unsigned long		start_time;$/;"	m	struct:s_arg
 t_arg	philo.h	/^}	t_arg;$/;"	t	typeref:struct:s_arg
 t_philo	philo.h	/^}	t_philo;$/;"	t	typeref:struct:s_philo
 thread	philo.h	/^	pthread_t		thread;$/;"	m	struct:s_philo
+time_check	philo_utils1.c	/^int	time_check(t_arg *arg)$/;"	f
 time_to_die	philo.h	/^	unsigned long	time_to_die;$/;"	m	struct:s_arg
 time_to_eat	philo.h	/^	int				time_to_eat;$/;"	m	struct:s_arg
-time_to_end	philo.h	/^	int				time_to_end;$/;"	m	struct:s_arg
+time_to_end	philo.h	/^	unsigned long	time_to_end;$/;"	m	struct:s_arg
 time_to_sleep	philo.h	/^	int				time_to_sleep;$/;"	m	struct:s_arg

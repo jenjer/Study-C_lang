@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 18:22:50 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/25 10:57:36 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/25 19:12:03 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 5 && argc != 6)
 		 return (print_error("error argc", 3));
-//	memset(&arg, 0, sizeof(t_arg));
+	memset(&arg, 0, sizeof(t_arg));
 	error = ft_arg_init(&arg, argc, argv);
 	if (error)
 		return (print_error("error arg init", error));
