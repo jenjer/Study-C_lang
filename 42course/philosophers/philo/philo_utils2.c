@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 21:51:57 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/26 21:39:53 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/26 22:39:47 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,16 @@ void	ft_pass_time(long wait_time, t_arg *arg)
 {
 	long	start;
 	long	now;
+	int		count;
 
 	start = ft_get_time();
 	while (arg_fin_check(arg) == 1)
 	{
+		count = 0;
 		now = ft_get_time();
 		if ((now - start) >= wait_time)
 			break ;
-		usleep(1000);
+		usleep(100);
 	}
 }
 

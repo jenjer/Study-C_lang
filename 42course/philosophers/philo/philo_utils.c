@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 22:36:36 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/26 21:38:43 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/26 22:43:35 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ int	ft_philo_action(t_arg *arg, t_philo *philo)
 		pthread_mutex_lock(&(arg->forks[philo->right]));
 		ft_philo_printf(arg, philo->id, "has taken a right fork");
 		ft_philo_printf(arg, philo->id, "is eating");
-		pthread_mutex_lock(&(philo->last_eat_time_mu));
-		philo->last_eat_time = ft_get_time();
-		pthread_mutex_unlock(&(philo->last_eat_time_mu));
 		philo->eat_count = philo->eat_count + 1;
+		philo->last_eat_time = ft_get_time();
 		ft_pass_time((long long)arg->time_to_eat, arg);
-		pthread_mutex_unlock(&(arg->forks[philo->right]));
+		pthread_mutex_lock(&(philo->last_eat_time_mu));
+		pthread_mutex_unlock(&(philo->last_eat_time_mu));
 	}
+	pthread_mutex_unlock(&(arg->forks[philo->right]));
 	pthread_mutex_unlock(&(arg->forks[philo->left]));
 	return (0);
 }
@@ -46,8 +46,8 @@ void	ft_last_philo_action(t_arg *arg, t_philo *philo)
 		pthread_mutex_unlock(&(philo->last_eat_time_mu));
 		philo->eat_count = philo->eat_count + 1;
 		ft_pass_time((long long)arg->time_to_eat, arg);
-		pthread_mutex_unlock(&(arg->forks[philo->left]));
 	}
+	pthread_mutex_unlock(&(arg->forks[philo->left]));
 	pthread_mutex_unlock(&(arg->forks[philo->right]));
 }
 
@@ -65,16 +65,13 @@ void	*ft_thread(void *argv)
 
 	philo = argv;
 	arg = philo->arg;
-	if (philo->id % 2)
-		usleep(10000);
+	if (philo->id % 2 == 1)
+		usleep(1000);
 	pthread_mutex_lock(&(arg->start));
 	pthread_mutex_unlock(&(arg->start));
 	while (arg_fin_check(arg))
 	{
-		if (philo->id % arg->philo_num == 0)
-			ft_last_philo_action(arg, philo);
-		else
-			ft_philo_action(arg, philo);
+		ft_philo_action(arg, philo);
 		if (arg->eat_times == philo->eat_count)
 			break ;
 		ft_philo_printf(arg, philo->id, "is sleeping");

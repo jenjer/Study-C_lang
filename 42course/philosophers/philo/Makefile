@@ -6,7 +6,7 @@
 #    By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/25 11:03:41 by youngski          #+#    #+#              #
-#    Updated: 2023/02/26 21:35:45 by youngski         ###   ########.fr        #
+#    Updated: 2023/02/26 21:41:08 by youngski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ BONUSOBJS = ${BONUSSRCS:.c=.o}
 
 NAME = philo
 
-CFLAGS = -Wall -Wextra -Werror  -g3 
+CFLAGS = -Wall -Wextra -Werror
 
 all : ${NAME}
 

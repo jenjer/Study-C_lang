@@ -6,11 +6,12 @@
 !_TAG_PROGRAM_VERSION	5.8	//
 AR	Makefile	/^AR = ar$/;"	m
 BONUSOBJS	Makefile	/^BONUSOBJS = ${BONUSSRCS:.c=.o}$/;"	m
-CFLAGS	Makefile	/^CFLAGS = -Wall -Wextra -Werror  -g3$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -Wall -Wextra -Werror$/;"	m
 NAME	Makefile	/^NAME = philo$/;"	m
 OBJS	Makefile	/^OBJS = ${SRCS:.c=.o}$/;"	m
 PHILO_H	philo.h	/^# define PHILO_H$/;"	d
 SRCS	Makefile	/^SRCS = main.c error.c init_func.c philo_utils.c philo_utils1.c ft_atoi.c \\$/;"	m
+add_finished_eat	philo_utils.c	/^void	add_finished_eat(t_arg *arg)$/;"	f
 arg	philo.h	/^	t_arg			*arg;$/;"	m	struct:s_philo
 arg_fin_check	philo_utils2.c	/^int	arg_fin_check(t_arg *arg)$/;"	f
 change_finish	philo_utils2.c	/^void	change_finish(t_arg *arg)$/;"	f
@@ -28,11 +29,11 @@ ft_atoi	ft_atoi.c	/^int	ft_atoi(const char *str)$/;"	f
 ft_free_thread	philo_utils1.c	/^void	ft_free_thread(t_arg *arg, t_philo *philo)$/;"	f
 ft_get_time	philo_utils1.c	/^unsigned long	ft_get_time(void)$/;"	f
 ft_last_philo_action	philo_utils.c	/^void	ft_last_philo_action(t_arg *arg, t_philo *philo)$/;"	f
-ft_pass_time	philo_utils.c	/^void	ft_pass_time(long wait_time, t_arg *arg)$/;"	f
+ft_pass_time	philo_utils2.c	/^void	ft_pass_time(long wait_time, t_arg *arg)$/;"	f
 ft_philo_action	philo_utils.c	/^int	ft_philo_action(t_arg *arg, t_philo *philo)$/;"	f
 ft_philo_check_finish	philo_utils1.c	/^void	ft_philo_check_finish(t_arg *arg, t_philo *philo, int i, long now)$/;"	f
 ft_philo_init	init_func.c	/^int	ft_philo_init(t_philo **philo, t_arg *arg)$/;"	f
-ft_philo_printf	philo_utils.c	/^int	ft_philo_printf(t_arg *arg, int id, char *msg)$/;"	f
+ft_philo_printf	philo_utils2.c	/^int	ft_philo_printf(t_arg *arg, int id, char *msg)$/;"	f
 ft_philo_start	philo_utils.c	/^int	ft_philo_start(t_arg *arg, t_philo *philo)$/;"	f
 ft_thread	philo_utils.c	/^void	*ft_thread(void *argv)$/;"	f
 id	philo.h	/^	int				id;$/;"	m	struct:s_philo
