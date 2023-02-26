@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 21:36:51 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/24 15:43:50 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/26 14:23:48 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 int	print_error(char *msg, int num)
 {
 	printf("%s, %d\n", msg, num);
-	return (1);
+	return (num);
 }

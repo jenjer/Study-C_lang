@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 18:23:33 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/25 21:53:17 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/26 17:19:20 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <unistd.h>
 # include <sys/time.h>
 # include <memory.h>
-
 
 typedef struct s_arg
 {
@@ -36,10 +35,9 @@ typedef struct s_arg
 	int				finished_eat;
 	int				finish;
 	long			start_time;
-
 }	t_arg;
 
-typedef struct	s_philo
+typedef struct s_philo
 {
 	t_arg			*arg;
 	pthread_mutex_t	last_eat_time_mu;
@@ -56,7 +54,8 @@ int				ft_philo_printf(t_arg *arg, int id, char *msg);
 int				ft_philo_action(t_arg *arg, t_philo *philo);
 void			*ft_thread(void *argv);
 int				ft_philo_start(t_arg *arg, t_philo *philo);
-void			ft_philo_check_finish(t_arg *arg, t_philo *philo);
+void			ft_philo_check_finish(t_arg *arg, t_philo *philo, \
+		int i, long now);
 int				ft_arg_init_mutex(t_arg *arg);
 int				ft_arg_init(t_arg *arg, int argc, char *argv[]);
 int				ft_philo_init(t_philo **philo, t_arg *arg);
@@ -67,7 +66,7 @@ int				print_error(char *msg, int num);
 int				time_check(t_arg *arg);
 
 int				ft_atoi(const char *str);
-int 			arg_fin_check(t_arg *arg);
-
+int				arg_fin_check(t_arg *arg);
+void			change_finish(t_arg *arg);
 
 #endif

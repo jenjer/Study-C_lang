@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 21:41:32 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/25 21:23:12 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/26 14:21:32 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_philo_init(t_philo **philo, t_arg *arg)
 	*philo = malloc(sizeof(t_philo) * arg->philo_num);
 	if (!(*philo))
 		return (1);
-	while(i < arg->philo_num)
+	while (i < arg->philo_num)
 	{
 		if (pthread_mutex_init(&((*philo)[i].last_eat_time_mu), 0))
 			return (1);

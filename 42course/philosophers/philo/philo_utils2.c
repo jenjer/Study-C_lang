@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 21:51:57 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/25 21:54:25 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/26 17:21:48 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,15 @@ int	arg_fin_check(t_arg *arg)
 	else
 	{
 		pthread_mutex_unlock(&(arg->finish_mu));
-		return (2);
+		return (0);
 	}
-	return (2);
+	pthread_mutex_unlock(&(arg->finish_mu));
+	return (0);
+}
+
+void	change_finish(t_arg *arg)
+{
+	pthread_mutex_lock(&(arg->finish_mu));
+	arg->finish = 1;
+	pthread_mutex_unlock(&(arg->finish_mu));
 }

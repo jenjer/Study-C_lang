@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 22:36:36 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/25 22:00:40 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/26 16:29:30 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_pass_time(long long wait_time, t_arg *arg)
 	long long	now;
 
 	start = ft_get_time();
-	while (!(arg->finish))
+	while (arg_fin_check(arg) == 1)
 	{
 		now = ft_get_time();
 		if ((now - start) >= wait_time)
@@ -37,10 +37,8 @@ int	ft_philo_printf(t_arg *arg, int id, char *msg)
 		return (-1);
 	}
 	pthread_mutex_lock(&(arg->print));
-	pthread_mutex_lock(&(arg->finish_mu));
-	if (!(arg->finish))
+	if (arg_fin_check(arg) == 1)
 		printf("%lld %d %s \n", now - arg->start_time, id + 1, msg);
-	pthread_mutex_unlock(&(arg->finish_mu));
 	pthread_mutex_unlock(&(arg->print));
 	return (0);
 }
@@ -72,9 +70,9 @@ void	*ft_thread(void *argv)
 
 	philo = argv;
 	arg = philo->arg;
-	if (philo->id %2)
-		usleep(1000);
-	while(!arg->finish)
+	if (philo->id % 2)
+		usleep(50);
+	while (arg_fin_check(arg))
 	{
 		ft_philo_action(arg, philo);
 		if (arg->eat_times == philo->eat_count)
@@ -82,7 +80,7 @@ void	*ft_thread(void *argv)
 			pthread_mutex_lock(&(arg->finished_eat_mu));
 			arg->finished_eat++;
 			pthread_mutex_unlock(&(arg->finished_eat_mu));
-			break;
+			break ;
 		}
 		ft_philo_printf(arg, philo->id, "is sleeping");
 		ft_pass_time((long long)arg->time_to_sleep, arg);
@@ -96,7 +94,6 @@ int	ft_philo_start(t_arg *arg, t_philo *philo)
 	int	i;
 
 	i = 0;
-	printf("arg->time_to_end = %lu\n",arg->time_to_end);
 	while (i < arg->philo_num)
 	{
 		pthread_mutex_lock(&(philo[i].last_eat_time_mu));
@@ -106,7 +103,7 @@ int	ft_philo_start(t_arg *arg, t_philo *philo)
 			return (1);
 		i++;
 	}
-	ft_philo_check_finish(arg, philo);
+	ft_philo_check_finish(arg, philo, -1, 0);
 	i = 0;
 	while (i < arg->philo_num)
 		pthread_join(philo[i++].thread, 0);
