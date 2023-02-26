@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 22:36:36 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/26 21:29:31 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/26 21:38:43 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	add_finished_eat(t_arg *arg)
 	pthread_mutex_lock(&(arg->finished_eat_mu));
 	arg->finished_eat++;
 	pthread_mutex_unlock(&(arg->finished_eat_mu));
-
 }
 
 void	*ft_thread(void *argv)
