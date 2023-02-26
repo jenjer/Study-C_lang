@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:36:04 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/26 17:21:20 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:28:08 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ void	ft_philo_check_finish(t_arg *arg, t_philo *philo, int i, long now)
 		{
 			now = ft_get_time();
 			pthread_mutex_lock(&(philo[i].last_eat_time_mu));
-			if (((now - philo[i].last_eat_time) >= arg->time_to_die))
+			if (((now - philo[i].last_eat_time) > arg->time_to_die))
 			{
+				pthread_mutex_lock(&(arg->print));
+				printf("i : %d, %lu \n",i,now - philo[i].last_eat_time);
+				pthread_mutex_unlock(&(arg->print));
 				pthread_mutex_unlock(&(philo[i].last_eat_time_mu));
 				ft_philo_printf(arg, i, "died\n");
 				change_finish(arg);
@@ -84,7 +87,6 @@ int	time_check(t_arg *arg)
 	now = ft_get_time();
 	if (now - arg->start_time >= (unsigned long)arg->time_to_die)
 	{
-		sleep(0);
 		ft_philo_printf(arg, -2, "time to die");
 		return (1);
 	}

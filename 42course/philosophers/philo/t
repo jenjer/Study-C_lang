@@ -1,0 +1,697 @@
+0 1 has token a left fork 
+0 1 has taken a right fork 
+0 1 is eating 
+1 3 has token a left fork 
+1 3 has taken a right fork 
+1 3 is eating 
+2 5 has token a left fork 
+2 5 has taken a right fork 
+2 5 is eating 
+3 7 has token a left fork 
+4 7 has taken a right fork 
+4 7 is eating 
+4 9 has token a left fork 
+4 9 has taken a right fork 
+4 9 is eating 
+5 11 has token a left fork 
+5 11 has taken a right fork 
+5 11 is eating 
+6 13 has token a left fork 
+6 13 has taken a right fork 
+6 13 is eating 
+7 15 has token a left fork 
+7 15 has taken a right fork 
+7 15 is eating 
+8 17 has token a left fork 
+8 17 has taken a right fork 
+8 17 is eating 
+9 19 has token a left fork 
+9 19 has taken a right fork 
+9 19 is eating 
+10 21 has token a left fork 
+10 21 has taken a right fork 
+10 21 is eating 
+11 23 has token a left fork 
+11 23 has taken a right fork 
+11 23 is eating 
+12 25 has token a left fork 
+12 25 has taken a right fork 
+12 25 is eating 
+12 27 has token a left fork 
+12 27 has taken a right fork 
+12 27 is eating 
+13 29 has token a left fork 
+13 29 has taken a right fork 
+13 29 is eating 
+14 31 has token a left fork 
+14 31 has taken a right fork 
+14 31 is eating 
+15 33 has token a left fork 
+15 33 has taken a right fork 
+15 33 is eating 
+16 35 has token a left fork 
+16 35 has taken a right fork 
+16 35 is eating 
+17 37 has token a left fork 
+17 37 has taken a right fork 
+17 37 is eating 
+18 39 has token a left fork 
+18 39 has taken a right fork 
+18 39 is eating 
+19 41 has token a left fork 
+19 41 has taken a right fork 
+19 41 is eating 
+20 43 has token a left fork 
+20 43 has taken a right fork 
+20 43 is eating 
+20 45 has token a left fork 
+20 45 has taken a right fork 
+20 45 is eating 
+21 47 has token a left fork 
+21 47 has taken a right fork 
+21 47 is eating 
+23 49 has token a left fork 
+23 49 has taken a right fork 
+23 49 is eating 
+23 51 has token a left fork 
+23 51 has taken a right fork 
+23 51 is eating 
+24 53 has token a left fork 
+24 53 has taken a right fork 
+24 53 is eating 
+25 55 has token a left fork 
+25 55 has taken a right fork 
+25 55 is eating 
+26 57 has token a left fork 
+26 57 has taken a right fork 
+26 57 is eating 
+27 59 has token a left fork 
+27 59 has taken a right fork 
+27 59 is eating 
+28 61 has token a left fork 
+28 61 has taken a right fork 
+28 61 is eating 
+29 63 has token a left fork 
+29 63 has taken a right fork 
+29 63 is eating 
+30 65 has token a left fork 
+30 65 has taken a right fork 
+30 65 is eating 
+31 67 has token a left fork 
+31 67 has taken a right fork 
+31 67 is eating 
+31 69 has token a left fork 
+31 69 has taken a right fork 
+31 69 is eating 
+32 71 has token a left fork 
+32 71 has taken a right fork 
+32 71 is eating 
+33 73 has token a left fork 
+33 73 has taken a right fork 
+33 73 is eating 
+34 75 has token a left fork 
+34 75 has taken a right fork 
+34 75 is eating 
+35 77 has token a left fork 
+35 77 has taken a right fork 
+35 77 is eating 
+36 79 has token a left fork 
+36 79 has taken a right fork 
+36 79 is eating 
+37 81 has token a left fork 
+37 81 has taken a right fork 
+37 81 is eating 
+38 83 has token a left fork 
+38 83 has taken a right fork 
+38 83 is eating 
+39 85 has token a left fork 
+39 85 has taken a right fork 
+39 85 is eating 
+40 87 has token a left fork 
+40 87 has taken a right fork 
+40 87 is eating 
+41 89 has token a left fork 
+41 89 has taken a right fork 
+41 89 is eating 
+42 91 has token a left fork 
+42 91 has taken a right fork 
+42 91 is eating 
+42 93 has token a left fork 
+42 93 has taken a right fork 
+42 93 is eating 
+43 95 has token a left fork 
+43 95 has taken a right fork 
+43 95 is eating 
+45 97 has token a left fork 
+45 97 has taken a right fork 
+45 97 is eating 
+45 99 has token a left fork 
+45 99 has taken a right fork 
+46 99 is eating 
+46 101 has token a left fork 
+46 101 has taken a right fork 
+46 101 is eating 
+47 103 has token a left fork 
+47 103 has taken a right fork 
+47 103 is eating 
+48 105 has token a left fork 
+48 105 has taken a right fork 
+48 105 is eating 
+49 107 has token a left fork 
+49 107 has taken a right fork 
+49 107 is eating 
+50 109 has token a left fork 
+50 109 has taken a right fork 
+51 109 is eating 
+52 111 has token a left fork 
+52 111 has taken a right fork 
+53 111 is eating 
+52 113 has token a left fork 
+54 113 has taken a right fork 
+55 113 is eating 
+53 115 has token a left fork 
+54 116 has token a left fork 
+55 119 has token a left fork 
+55 119 has taken a right fork 
+55 119 is eating 
+54 117 has token a left fork 
+55 117 has taken a right fork 
+55 117 is eating 
+55 121 has token a left fork 
+57 121 has taken a right fork 
+57 121 is eating 
+56 123 has token a left fork 
+57 123 has taken a right fork 
+57 123 is eating 
+57 125 has token a left fork 
+58 125 has taken a right fork 
+58 125 is eating 
+58 127 has token a left fork 
+58 127 has taken a right fork 
+59 127 is eating 
+59 129 has token a left fork 
+59 129 has taken a right fork 
+59 129 is eating 
+60 131 has token a left fork 
+61 131 has taken a right fork 
+61 131 is eating 
+61 133 has token a left fork 
+61 133 has taken a right fork 
+61 133 is eating 
+62 135 has token a left fork 
+62 135 has taken a right fork 
+62 135 is eating 
+63 137 has token a left fork 
+63 137 has taken a right fork 
+64 137 is eating 
+64 139 has token a left fork 
+64 139 has taken a right fork 
+64 139 is eating 
+65 141 has token a left fork 
+65 141 has taken a right fork 
+66 141 is eating 
+66 143 has token a left fork 
+66 143 has taken a right fork 
+68 143 is eating 
+67 145 has token a left fork 
+68 145 has taken a right fork 
+68 145 is eating 
+68 147 has token a left fork 
+69 147 has taken a right fork 
+69 147 is eating 
+69 149 has token a left fork 
+69 149 has taken a right fork 
+69 149 is eating 
+70 151 has token a left fork 
+70 151 has taken a right fork 
+70 151 is eating 
+70 153 has token a left fork 
+71 153 has taken a right fork 
+72 153 is eating 
+72 155 has token a left fork 
+72 155 has taken a right fork 
+73 155 is eating 
+72 157 has token a left fork 
+73 157 has taken a right fork 
+73 157 is eating 
+73 159 has token a left fork 
+73 159 has taken a right fork 
+74 159 is eating 
+75 161 has token a left fork 
+76 161 has taken a right fork 
+77 161 is eating 
+76 163 has token a left fork 
+77 163 has taken a right fork 
+78 163 is eating 
+76 165 has token a left fork 
+77 167 has token a left fork 
+78 167 has taken a right fork 
+78 167 is eating 
+78 166 has token a left fork 
+78 169 has token a left fork 
+79 171 has token a left fork 
+80 171 has taken a right fork 
+80 171 is eating 
+80 170 has token a left fork 
+80 173 has token a left fork 
+81 173 has taken a right fork 
+81 173 is eating 
+81 175 has token a left fork 
+81 175 has taken a right fork 
+82 175 is eating 
+82 177 has token a left fork 
+82 177 has taken a right fork 
+82 177 is eating 
+83 179 has token a left fork 
+83 179 has taken a right fork 
+83 179 is eating 
+85 183 has token a left fork 
+85 183 has taken a right fork 
+85 183 is eating 
+85 181 has token a left fork 
+86 185 has token a left fork 
+87 185 has taken a right fork 
+87 185 is eating 
+86 182 has token a left fork 
+86 187 has token a left fork 
+87 187 has taken a right fork 
+87 187 is eating 
+87 189 has token a left fork 
+88 189 has taken a right fork 
+88 189 is eating 
+88 191 has token a left fork 
+89 191 has taken a right fork 
+89 191 is eating 
+89 193 has token a left fork 
+90 193 has taken a right fork 
+90 193 is eating 
+90 195 has token a left fork 
+90 195 has taken a right fork 
+90 195 is eating 
+91 197 has token a left fork 
+92 197 has taken a right fork 
+92 197 is eating 
+93 199 has token a left fork 
+93 199 has taken a right fork 
+93 199 is eating 
+201 3 is sleeping 
+201 4 has token a left fork 
+204 4 has taken a right fork 
+204 4 is eating 
+202 5 is sleeping 
+202 6 has token a left fork 
+204 6 has taken a right fork 
+204 6 is eating 
+204 9 is sleeping 
+204 10 has token a left fork 
+206 10 has taken a right fork 
+207 10 is eating 
+205 11 is sleeping 
+205 12 has token a left fork 
+207 12 has taken a right fork 
+207 12 is eating 
+204 7 is sleeping 
+207 13 is sleeping 
+207 14 has token a left fork 
+211 14 has taken a right fork 
+212 14 is eating 
+206 2 has token a left fork 
+213 2 has taken a right fork 
+215 2 is eating 
+208 17 is sleeping 
+208 18 has token a left fork 
+210 19 is sleeping 
+210 20 has token a left fork 
+217 20 has taken a right fork 
+218 20 is eating 
+204 8 has token a left fork 
+211 23 is sleeping 
+211 24 has token a left fork 
+220 24 has taken a right fork 
+220 24 is eating 
+206 1 is sleeping 
+212 25 is sleeping 
+212 26 has token a left fork 
+207 15 is sleeping 
+213 29 is sleeping 
+213 30 has token a left fork 
+223 30 has taken a right fork 
+223 30 is eating 
+215 33 is sleeping 
+215 34 has token a left fork 
+207 16 has token a left fork 
+225 16 has taken a right fork 
+225 16 is eating 
+217 36 has token a left fork 
+225 36 has taken a right fork 
+226 36 is eating 
+210 21 is sleeping 
+210 22 has token a left fork 
+227 22 has taken a right fork 
+227 22 is eating 
+219 41 is sleeping 
+219 42 has token a left fork 
+229 42 has taken a right fork 
+230 42 is eating 
+220 46 has token a left fork 
+230 46 has taken a right fork 
+230 46 is eating 
+230 65 is sleeping 
+230 66 has token a left fork 
+221 47 is sleeping 
+221 48 has token a left fork 
+232 48 has taken a right fork 
+232 48 is eating 
+223 52 has token a left fork 
+232 52 has taken a right fork 
+232 52 is eating 
+214 31 is sleeping 
+214 32 has token a left fork 
+232 32 has taken a right fork 
+233 32 is eating 
+224 34 has taken a right fork 
+235 34 is eating 
+217 35 is sleeping 
+217 37 is sleeping 
+225 55 is sleeping 
+225 56 has token a left fork 
+237 56 has taken a right fork 
+237 56 is eating 
+226 58 has token a left fork 
+237 58 has taken a right fork 
+238 58 is eating 
+218 39 is sleeping 
+218 40 has token a left fork 
+228 61 is sleeping 
+228 62 has token a left fork 
+240 62 has taken a right fork 
+241 62 is eating 
+229 64 has token a left fork 
+241 64 has taken a right fork 
+241 64 is eating 
+212 28 has token a left fork 
+242 28 has taken a right fork 
+243 28 is eating 
+231 69 is sleeping 
+231 70 has token a left fork 
+245 70 has taken a right fork 
+245 70 is eating 
+231 68 has token a left fork 
+246 68 has taken a right fork 
+246 68 is eating 
+223 49 is sleeping 
+223 50 has token a left fork 
+246 50 has taken a right fork 
+247 50 is eating 
+233 74 has token a left fork 
+248 74 has taken a right fork 
+248 74 is eating 
+233 72 has token a left fork 
+248 72 has taken a right fork 
+248 72 is eating 
+235 77 is sleeping 
+235 78 has token a left fork 
+252 78 has taken a right fork 
+252 78 is eating 
+236 80 has token a left fork 
+253 80 has taken a right fork 
+253 80 is eating 
+227 59 is sleeping 
+237 81 is sleeping 
+237 82 has token a left fork 
+255 82 has taken a right fork 
+255 82 is eating 
+239 85 is sleeping 
+239 86 has token a left fork 
+257 86 has taken a right fork 
+257 86 is eating 
+240 87 is sleeping 
+240 88 has token a left fork 
+258 88 has taken a right fork 
+259 88 is eating 
+220 45 is sleeping 
+212 27 is sleeping 
+242 91 is sleeping 
+242 92 has token a left fork 
+260 92 has taken a right fork 
+261 92 is eating 
+220 43 is sleeping 
+220 44 has token a left fork 
+262 44 has taken a right fork 
+263 44 is eating 
+244 95 is sleeping 
+244 96 has token a left fork 
+264 96 has taken a right fork 
+264 96 is eating 
+222 26 has taken a right fork 
+266 26 is eating 
+246 97 is sleeping 
+246 98 has token a left fork 
+267 98 has taken a right fork 
+267 98 is eating 
+247 101 is sleeping 
+247 102 has token a left fork 
+268 102 has taken a right fork 
+268 102 is eating 
+248 103 is sleeping 
+248 104 has token a left fork 
+270 104 has taken a right fork 
+270 104 is eating 
+234 75 is sleeping 
+234 76 has token a left fork 
+271 76 has taken a right fork 
+271 76 is eating 
+249 107 is sleeping 
+249 108 has token a left fork 
+273 108 has taken a right fork 
+251 110 has token a left fork 
+275 110 has taken a right fork 
+277 110 is eating 
+217 38 has token a left fork 
+279 38 has taken a right fork 
+279 38 is eating 
+254 112 has token a left fork 
+279 112 has taken a right fork 
+280 112 is eating 
+227 60 has token a left fork 
+284 60 has taken a right fork 
+284 60 is eating 
+255 118 has token a left fork 
+286 118 has taken a right fork 
+286 118 is eating 
+255 114 has token a left fork 
+257 123 is sleeping 
+257 124 has token a left fork 
+287 124 has taken a right fork 
+287 124 is eating 
+257 121 is sleeping 
+257 122 has token a left fork 
+287 122 has taken a right fork 
+288 122 is eating 
+219 8 has taken a right fork 
+289 8 is eating 
+259 128 has token a left fork 
+290 128 has taken a right fork 
+290 128 is eating 
+260 130 has token a left fork 
+291 130 has taken a right fork 
+291 130 is eating 
+261 134 has token a left fork 
+291 134 has taken a right fork 
+292 134 is eating 
+243 94 has token a left fork 
+293 94 has taken a right fork 
+293 94 is eating 
+263 131 is sleeping 
+263 132 has token a left fork 
+295 132 has taken a right fork 
+295 132 is eating 
+264 139 is sleeping 
+264 140 has token a left fork 
+264 137 is sleeping 
+264 138 has token a left fork 
+298 138 has taken a right fork 
+299 138 is eating 
+266 142 has token a left fork 
+301 142 has taken a right fork 
+301 142 is eating 
+247 99 is sleeping 
+247 100 has token a left fork 
+302 100 has taken a right fork 
+303 100 is eating 
+269 143 is sleeping 
+269 144 has token a left fork 
+306 144 has taken a right fork 
+306 144 is eating 
+269 147 is sleeping 
+269 148 has token a left fork 
+307 148 has taken a right fork 
+308 148 is eating 
+248 105 is sleeping 
+271 151 is sleeping 
+271 152 has token a left fork 
+312 152 has taken a right fork 
+313 152 is eating 
+272 154 has token a left fork 
+317 154 has taken a right fork 
+320 154 is eating 
+273 155 is sleeping 
+273 156 has token a left fork 
+321 156 has taken a right fork 
+321 156 is eating 
+274 160 has token a left fork 
+323 160 has taken a right fork 
+323 160 is eating 
+277 161 is sleeping 
+277 162 has token a left fork 
+325 162 has taken a right fork 
+325 162 is eating 
+278 164 has token a left fork 
+226 57 is sleeping 
+279 167 is sleeping 
+279 168 has token a left fork 
+279 166 has taken a right fork 
+330 166 is eating 
+255 119 is sleeping 
+280 171 is sleeping 
+280 172 has token a left fork 
+332 172 has taken a right fork 
+332 172 is eating 
+281 173 is sleeping 
+281 174 has token a left fork 
+334 174 has taken a right fork 
+334 174 is eating 
+282 177 is sleeping 
+282 178 has token a left fork 
+283 179 is sleeping 
+283 180 has token a left fork 
+238 40 has taken a right fork 
+337 40 is eating 
+285 183 is sleeping 
+285 184 has token a left fork 
+337 184 has taken a right fork 
+337 184 is eating 
+255 113 is sleeping 
+287 185 is sleeping 
+287 186 has token a left fork 
+341 186 has taken a right fork 
+342 186 is eating 
+258 125 is sleeping 
+288 187 is sleeping 
+288 188 has token a left fork 
+347 188 has taken a right fork 
+348 188 is eating 
+289 189 is sleeping 
+289 190 has token a left fork 
+351 190 has taken a right fork 
+352 190 is eating 
+290 192 has token a left fork 
+352 192 has taken a right fork 
+352 192 is eating 
+260 129 is sleeping 
+242 89 is sleeping 
+261 133 is sleeping 
+291 195 is sleeping 
+291 196 has token a left fork 
+355 196 has taken a right fork 
+358 196 is eating 
+263 135 is sleeping 
+293 197 is sleeping 
+293 198 has token a left fork 
+361 198 has taken a right fork 
+362 198 is eating 
+293 200 has token a left fork 
+364 200 has taken a right fork 
+364 200 is eating 
+296 140 has taken a right fork 
+365 140 is eating 
+266 141 is sleeping 
+224 53 is sleeping 
+233 73 is sleeping 
+268 145 is sleeping 
+268 146 has token a left fork 
+370 146 has taken a right fork 
+370 146 is eating 
+224 54 has token a left fork 
+373 54 has taken a right fork 
+373 54 is eating 
+272 153 is sleeping 
+273 157 is sleeping 
+273 158 has token a left fork 
+380 158 has taken a right fork 
+380 158 is eating 
+274 108 is eating 
+216 18 has taken a right fork 
+380 18 is eating 
+278 163 is sleeping 
+254 111 is sleeping 
+280 170 has taken a right fork 
+382 170 is eating 
+282 175 is sleeping 
+282 176 has token a left fork 
+384 176 has taken a right fork 
+384 176 is eating 
+285 182 has taken a right fork 
+388 182 is eating 
+239 83 is sleeping 
+239 84 has token a left fork 
+391 84 has taken a right fork 
+394 84 is eating 
+229 63 is sleeping 
+290 191 is sleeping 
+290 193 is sleeping 
+290 194 has token a left fork 
+401 194 has taken a right fork 
+401 194 is eating 
+263 136 has token a left fork 
+405 136 has taken a right fork 
+405 136 is eating 
+231 66 has taken a right fork 
+406 66 is eating 
+269 150 has token a left fork 
+406 150 has taken a right fork 
+406 150 is eating 
+248 106 has token a left fork 
+251 109 is sleeping 
+274 159 is sleeping 
+236 79 is sleeping 
+255 120 has token a left fork 
+411 120 has taken a right fork 
+411 120 is eating 
+255 116 has taken a right fork 
+413 116 is eating 
+259 127 is sleeping 
+242 90 has token a left fork 
+415 90 has taken a right fork 
+417 90 is eating 
+404 3 is thinking 
+293 199 is sleeping 
+231 67 is sleeping 
+405 6 is sleeping 
+406 5 is thinking 
+223 51 is sleeping 
+269 149 is sleeping 
+233 71 is sleeping 
+407 9 is thinking 
+407 11 is thinking 
+407 10 is sleeping 
+408 106 has taken a right fork 
+428 106 is eating 
+410 7 is thinking 
+411 13 is thinking 
+335 178 has taken a right fork 
+432 178 is eating 
+412 14 is sleeping 
+258 126 has token a left fork 
+243 93 is sleeping 
+417 2 is sleeping 
+417 19 is thinking 
+404 4 is sleeping 
+417 17 is thinking 
+419 3 has token a left fork 
+434 3 has taken a right fork 
+437 3 is eating 
+421 1 died
+ 
+421 24 is sleeping 
+422 15 is thinking 

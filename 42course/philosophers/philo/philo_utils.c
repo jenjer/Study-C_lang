@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 22:36:36 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/26 16:29:30 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:31:36 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	*ft_thread(void *argv)
 	philo = argv;
 	arg = philo->arg;
 	if (philo->id % 2)
-		usleep(50);
+		usleep(500);
 	while (arg_fin_check(arg))
 	{
 		ft_philo_action(arg, philo);
