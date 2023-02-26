@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 21:41:32 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/26 14:21:32 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/26 20:07:25 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int	ft_arg_init_mutes(t_arg *arg)
 {
 	int	i;
 
-	if (pthread_mutex_init(&(arg->print), NULL))
+	if (pthread_mutex_init(&(arg->print), NULL) \
+			|| pthread_mutex_init(&(arg->start), NULL))
 		return (1);
 	arg->forks = malloc(sizeof(pthread_mutex_t) * arg->philo_num);
 	if (!(arg->forks))

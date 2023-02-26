@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:36:04 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/26 18:28:08 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/26 20:26:38 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ void	ft_philo_check_finish(t_arg *arg, t_philo *philo, int i, long now)
 			change_finish(arg);
 			break ;
 		}
-		i = -1;
 		pthread_mutex_unlock(&(arg->finished_eat_mu));
+		i = -1;
 		while (++i < arg->philo_num)
 		{
-			now = ft_get_time();
 			pthread_mutex_lock(&(philo[i].last_eat_time_mu));
+			now = ft_get_time();
 			if (((now - philo[i].last_eat_time) > arg->time_to_die))
 			{
 				pthread_mutex_lock(&(arg->print));

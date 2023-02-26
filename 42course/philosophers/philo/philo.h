@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 18:23:33 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/26 17:19:20 by youngski         ###   ########.fr       */
+/*   Updated: 2023/02/26 21:19:11 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_arg
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	finished_eat_mu;
 	pthread_mutex_t	finish_mu;
+	pthread_mutex_t	start;
 	int				philo_num;
 	long			time_to_die;
 	int				time_to_eat;
@@ -49,7 +50,7 @@ typedef struct s_philo
 	pthread_t		thread;
 }	t_philo;
 
-void			ft_pass_time(long long wait_time, t_arg *arg);
+void			ft_pass_time(long wait_time, t_arg *arg);
 int				ft_philo_printf(t_arg *arg, int id, char *msg);
 int				ft_philo_action(t_arg *arg, t_philo *philo);
 void			*ft_thread(void *argv);
@@ -68,5 +69,6 @@ int				time_check(t_arg *arg);
 int				ft_atoi(const char *str);
 int				arg_fin_check(t_arg *arg);
 void			change_finish(t_arg *arg);
+void			ft_last_philo_action(t_arg *arg, t_philo *philo);
 
 #endif
