@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 22:36:36 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/26 22:43:35 by youngski         ###   ########.fr       */
+/*   Updated: 2023/03/18 17:38:59 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ int	ft_philo_action(t_arg *arg, t_philo *philo)
 		ft_philo_printf(arg, philo->id, "has taken a right fork");
 		ft_philo_printf(arg, philo->id, "is eating");
 		philo->eat_count = philo->eat_count + 1;
+		pthread_mutex_lock(&(philo->last_eat_time_mu));
 		philo->last_eat_time = ft_get_time();
+		pthread_mutex_unlock(&(philo->last_eat_time_mu));
 		ft_pass_time((long long)arg->time_to_eat, arg);
 		pthread_mutex_lock(&(philo->last_eat_time_mu));
 		pthread_mutex_unlock(&(philo->last_eat_time_mu));

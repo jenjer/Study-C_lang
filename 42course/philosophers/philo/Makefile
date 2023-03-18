@@ -6,14 +6,13 @@
 #    By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/25 11:03:41 by youngski          #+#    #+#              #
-#    Updated: 2023/02/26 21:41:08 by youngski         ###   ########.fr        #
+#    Updated: 2023/03/18 17:37:10 by youngski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = main.c error.c init_func.c philo_utils.c philo_utils1.c ft_atoi.c \
 	   philo_utils2.c
 OBJS = ${SRCS:.c=.o}
-AR = ar
 
 BONUSOBJS = ${BONUSSRCS:.c=.o}
 
