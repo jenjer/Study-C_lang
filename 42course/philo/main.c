@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 18:22:50 by youngski          #+#    #+#             */
-/*   Updated: 2023/03/18 18:10:46 by youngski         ###   ########.fr       */
+/*   Updated: 2023/03/19 14:12:47 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,16 @@ int	check_arg(char *argv[])
 	return (0);
 }
 
+void	make_while(t_arg *arg)
+{
+	while (1)
+	{
+		if (arg->finish)
+			return ;
+	}
+	return ;
+}
+
 int	main(int argc, char *argv[])
 {
 	t_arg	arg;
@@ -54,7 +64,7 @@ int	main(int argc, char *argv[])
 	if (argc != 5 && argc != 6)
 		return (print_error("error argc", 3));
 	if (check_arg(argv))
-		return (print_error("error argv", 3));
+		return (print_error("error argv", 0));
 	error = ft_arg_init(&arg, argc, argv);
 	if (error)
 		return (print_error("error arg init", error));

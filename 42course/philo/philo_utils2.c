@@ -6,11 +6,20 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 21:51:57 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/26 22:39:47 by youngski         ###   ########.fr       */
+/*   Updated: 2023/03/18 19:25:20 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+int	check_died_in_func(t_philo *philo, t_arg *arg, int i, long now)
+{
+	if (((now - philo[i].last_eat_time) > arg->time_to_die) && !arg->finish)
+		return (1);
+	else
+		return (0);
+	return (0);
+}
 
 int	arg_fin_check(t_arg *arg)
 {

@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:36:04 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/26 22:43:55 by youngski         ###   ########.fr       */
+/*   Updated: 2023/03/18 19:24:49 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_philo_check_finish(t_arg *arg, t_philo *philo, int i, long now)
 		{
 			pthread_mutex_lock(&(philo[i].last_eat_time_mu));
 			now = ft_get_time();
-			if (((now - philo[i].last_eat_time) > arg->time_to_die))
+			if (check_died_in_func(philo, arg, i, now))
 			{
 				pthread_mutex_unlock(&(philo[i].last_eat_time_mu));
 				ft_philo_printf(arg, i, "died\n");

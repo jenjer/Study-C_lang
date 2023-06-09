@@ -6,7 +6,7 @@
 /*   By: youngski <youngski@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 18:23:33 by youngski          #+#    #+#             */
-/*   Updated: 2023/02/26 21:19:11 by youngski         ###   ########.fr       */
+/*   Updated: 2023/03/19 14:08:47 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,8 @@ int				ft_atoi(const char *str);
 int				arg_fin_check(t_arg *arg);
 void			change_finish(t_arg *arg);
 void			ft_last_philo_action(t_arg *arg, t_philo *philo);
+void			make_while(t_arg *arg);
+
+int				check_died_in_func(t_philo *ph, t_arg *arg, int i, long n);
 
 #endif
