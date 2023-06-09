@@ -3,66 +3,68 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gyopark <gyopark@student.42seoul.kr>       +#+  +:+       +#+         #
+#    By: gyopark <gyopark@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 19:45:58 by gyopark           #+#    #+#              #
-#    Updated: 2023/01/18 12:37:36 by gyopark          ###   ########.fr        #
+#    Updated: 2023/05/22 17:10:45 by gyopark          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= so_long
+NAME        = cub3d
 
-CC			= cc
-CFLAGS		= -Wall -Wextra -Werror 
-MLX			= -L./mlx -lmlx -framework OpenGL -framework AppKit
-MLXDIR		= ./mlx
-FT_PRINTF	= ft_printf
-PRINTF_LIB	= libftprintf.a
+CC          = cc
+CFLAGS      = -Wall -Wextra -Werror -o3 -g3 #-fsanitize=address
+MLX         = -L./mlx -lmlx -framework OpenGL -framework AppKit
+MLXDIR      = ./mlx
+LIBFTDIR    = ./libft
+LIBFT       = libft.a
 
-SRCS_MAN 	= so_long1.c				\
-			  so_long2.c				\
-			  so_long3.c				\
-			  so_long4.c				\
-			  gnl/get_next_line.c		\
-			  gnl/get_next_line_utils.c	
+SRCS_MAN    = src/main.c					\
+			  src/map_setting.c				\
+			  src/map_valid.c				\
+			  src/map_direction.c			\
+			  src/map_color.c				\
+			  src/map2/map2_press.c			\
+			  src/map2/map2_cast.c			\
+			  src/map2/map2_cast_init.c		\
+			  src/map2/map2_cast_texture.c	\
+			  src/map2/map2_player.c		\
+			  src/map2/map2_ray_cal.c		\
+			  src/map2/map2_ray_draw.c		\
+			  src/map2/map2_ray_init.c		\
+			  src/map3/map3_render.c		\
+			  src/map3/map3_loop.c			\
+			  gnl/get_next_line.c       	\
+			  src/utils.c					\
+			  src/utils2.c					\
+			  src/utils3.c					\
+			  src/map_valid2.c				\
+			  src/map_direction2.c			\
+			  src/map_setting2.c			\
+			  src/map_valid3.c
 
-SRCS_BONUS	= s_bonus/so_long_bonus1.c	\
-			  s_bonus/so_long_bonus2.c	\
-			  s_bonus/so_long_bonus3.c	\
-			  s_bonus/so_long_bonus4.c	\
-			  gnl/get_next_line.c		\
-			  gnl/get_next_line_utils.c
+OBJS_MAN    = ${SRCS_MAN:.c=.o}
 
-OBJS_MAN 	= ${SRCS_MAN:.c=.o}
-
-OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
-
-$(NAME) : all 
-
-all bonus:
-		rm -f all bonus $(NAME)
+$(NAME) : $(OBJS_MAN)
+		rm -f $(NAME)
 		make clean -C $(MLXDIR)
-		make fclean -C $(FT_PRINTF)		
-		make all -C $(MLXDIR)	
-		make all -C $(FT_PRINTF)
-		$(CC) $(CFLAGS) -o $(NAME) $(MLX) $^ $(FT_PRINTF)/$(PRINTF_LIB)
-		touch $@
+		make fclean -C $(LIBFTDIR)  
+		make all -C $(MLXDIR)
+		make all -C $(LIBFTDIR)
+		$(CC) $(CFLAGS) $(MLX) $^ $(LIBFTDIR)/$(LIBFT) -o $(NAME)
 
-all : $(OBJS_MAN)
-
-bonus : $(OBJS_BONUS)
+all : $(NAME)
 
 fclean : clean
 		rm -f $(NAME)
-		make fclean -C $(FT_PRINTF)
 
 clean :
-		rm -f $(OBJS_MAN) $(OBJS_BONUS) all bonus
-		make clean -C $(FT_PRINTF)
+		rm -f $(OBJS_MAN) 
 		make clean -C $(MLXDIR)
+		make clean -C $(LIBFTDIR)
 
 re : 
 	make fclean 
 	make all
 
-.PHONY : fclean clean re ft_printf libft
+.PHONY : fclean clean re all

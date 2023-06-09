@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyopark <gyopark@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: gyopark < gyopark@student.42seoul.kr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 19:38:42 by gyopark           #+#    #+#             */
-/*   Updated: 2023/01/12 14:27:30 by gyopark          ###   ########.fr       */
+/*   Updated: 2023/03/28 23:01:29 by gyopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,21 +101,22 @@ char	*get_next_line(int fd)
 	static char	*backup[OPEN_MAX];
 	char		*str;
 	int			read_size;
+	char		*for_free;
 
 	if (BUFFER_SIZE <= 0 || fd < 0 || fd >= OPEN_MAX)
 		return (0);
 	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
 		return (0);
-	if (!backup[fd])
-		backup[fd] = ft_strdup("");
 	while (!ft_strchr(backup[fd], '\n'))
 	{
 		read_size = read(fd, buf, BUFFER_SIZE);
 		if (read_size <= 0)
 			return (meet_eof(&backup[fd], buf, read_size));
 		buf[read_size] = '\0';
+		for_free = backup[fd];
 		backup[fd] = ft_strjoin(backup[fd], buf);
+		free(for_free);
 	}
 	str = make_line(backup[fd], 0);
 	backup[fd] = cut_line(backup[fd]);

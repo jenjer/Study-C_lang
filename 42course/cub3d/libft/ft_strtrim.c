@@ -6,13 +6,13 @@
 /*   By: youngski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 21:02:01 by youngski          #+#    #+#             */
-/*   Updated: 2022/12/28 17:29:53 by youngski         ###   ########.fr       */
+/*   Updated: 2023/03/25 12:57:07 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char *s1, char const *set)
+char	*ft_strtrim(char *s1, char *set)
 {
 	size_t	i;
 	size_t	len;

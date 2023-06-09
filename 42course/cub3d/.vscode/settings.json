@@ -1,0 +1,34 @@
+{
+	"files.associations": 
+	{
+		"cub3d.h": "c",
+		"cub2d.h": "c",
+		"stdio.h": "c",
+		"array": "c",
+		"string": "c",
+		"string_view": "c",
+		"vector": "c",
+		"fcntl.h": "c",
+		"type_traits": "c",
+		"get_next_line.h": "c",
+		"string.h": "c",
+		"unistd.h": "c",
+		"stdlib.h": "c",
+		"math.h": "c",
+		"libft.h": "c"
+	},
+	"blockman.n03MaxDepth": {
+		// ...
+		"editor.inlayHints.enabled": "off",
+		"editor.guides.indentation": false, // new API for indent guides. The old one is: "editor.renderIndentGuides": false,
+		"editor.guides.bracketPairs": false, // advanced indent guides (But only for brackets) (This does not turn off editor.bracketPairColorization)
+		"editor.wordWrap": "off",
+		"diffEditor.wordWrap": "off",
+	
+		"workbench.colorCustomizations": {
+			// ...
+			"editor.lineHighlightBorder": "#9fced11f",
+			"editor.lineHighlightBackground": "#1073cf2d"
+		}
+	}
+}

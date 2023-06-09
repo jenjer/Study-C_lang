@@ -6,12 +6,12 @@
 /*   By: youngski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:53:54 by youngski          #+#    #+#             */
-/*   Updated: 2022/12/14 18:52:52 by youngski         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:12:32 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
+
 static t_list	*deling(void *content, void (*del)(void *))
 {
 	if (content)
@@ -47,4 +47,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (ret_start);
 }
-*/

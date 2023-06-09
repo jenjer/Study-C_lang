@@ -6,7 +6,7 @@
 /*   By: youngski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 12:59:49 by youngski          #+#    #+#             */
-/*   Updated: 2022/11/18 17:18:54 by youngski         ###   ########.fr       */
+/*   Updated: 2023/03/25 12:55:50 by youngski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static size_t	counting_word(char const *s, char c)
 	return (ret);
 }
 
-static char	*cpy_string(const char *s, char c)
+static char	*cpy_string(char *s, char c)
 {
 	char	*ret;
 	size_t	len;
@@ -45,7 +45,7 @@ static char	*cpy_string(const char *s, char c)
 	return (ret);
 }
 
-static char	**inserting(char **ret, size_t count_word, char const *s, char c)
+static char	**inserting(char **ret, size_t count_word, char *s, char c)
 {
 	size_t	i;
 
@@ -73,7 +73,7 @@ static char	**inserting(char **ret, size_t count_word, char const *s, char c)
 	return (ret);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char	**ret;
 	size_t	count_word;

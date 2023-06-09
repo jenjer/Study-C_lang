@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youngski <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gyopark < gyopark@student.42seoul.kr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:21:48 by youngski          #+#    #+#             */
-/*   Updated: 2022/11/12 17:44:45 by youngski         ###   ########.fr       */
+/*   Updated: 2023/03/28 23:00:15 by gyopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	char	src;
+	int		len;
 
-	i = 0;
-	while (s[i] && s[i] != (unsigned char)c)
+	if (!s)
+		return (NULL);
+	len = ft_strlen(s);
+	src = c;
+	while (len-- >= 0)
 	{
-		i++;
+		if (*s == src)
+			return ((char *)s);
+		s++;
 	}
-	if (s[i] == (unsigned char)c)
-		return ((char *)s + i);
-	return (0);
+	return (NULL);
 }

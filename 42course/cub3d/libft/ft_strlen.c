@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youngski <youngski@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: gyopark < gyopark@student.42seoul.kr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 21:35:55 by youngski          #+#    #+#             */
-/*   Updated: 2022/11/18 17:38:15 by youngski         ###   ########.fr       */
+/*   Updated: 2023/03/28 23:02:42 by gyopark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i] != '\0')
 	{
 		i++;
