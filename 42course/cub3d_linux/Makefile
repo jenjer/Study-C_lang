@@ -12,10 +12,10 @@
 
 NAME        = cub3d
 
-CC          = cc
-CFLAGS      = -Wall -Wextra -Werror -O3 -g3 #-fsanitize=address
-MLX         = -L./mlx -lmlx -framework OpenGL -framework AppKit
-MLXDIR      = ./mlx
+CC          = gcc
+CFLAGS      = -O3 -g3 -DSTRINGPUTX11   #-fsanitize=address
+MLX         = -L./minilibx-linux -lmlx -lmlx_Linux -L./ -lOpenGL
+MLXDIR      = ./minilibx-linux
 LIBFTDIR    = ./libft
 LIBFT       = libft.a
 
@@ -51,7 +51,7 @@ $(NAME) : $(OBJS_MAN)
 		make fclean -C $(LIBFTDIR)  
 		make all -C $(MLXDIR)
 		make all -C $(LIBFTDIR)
-		$(CC) $(CFLAGS) $(MLX) $^ $(LIBFTDIR)/$(LIBFT) -o $(NAME)
+		$(CC) $(CFLAGS) $^ $(LIBFTDIR)/$(LIBFT) -o $(NAME) $(MLX) -lm -lX11 -lXext
 
 all : $(NAME)
 
