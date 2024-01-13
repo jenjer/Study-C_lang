@@ -24,10 +24,8 @@ static int	count_max(const char *arr)
 
 size_t	ft_strlcpy(char *dest, char *src, size_t dstsize)
 {
-	size_t	ret;
 	size_t	i;
 
-	ret = 0;
 	i = 0;
 	if (dstsize < 1)
 		return (count_max(src));

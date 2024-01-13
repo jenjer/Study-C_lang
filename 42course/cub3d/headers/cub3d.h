@@ -15,7 +15,7 @@
 
 # include <stdio.h>
 
-# include "../mlx/mlx.h"
+# include "../minilibx-linux/mlx.h"
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdlib.h>
